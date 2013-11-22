@@ -1,0 +1,76 @@
+\documentclass[a4paper,twoside,french]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[english,french]{babel}
+\usepackage{times}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{xspace}
+\sloppy
+
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{+3cm}
+\addtolength{\oddsidemargin}{-0,5cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\addtolength{\textwidth}{+3cm}
+
+%\renewcommand\section{\@startsection {section}{1}{\z@}%
+%	{-3.5ex \@plus -1ex \@minus -.2ex}%
+%	{2.3ex \ at plus.2ex}%
+%	{\reset@font\Large\bfseries}}
+
+\makeatletter
+\renewcommand\section{\@startsection
+  {section}{1}{1cm}%name, level, indent
+  {1.5\baselineskip}%             beforeskip
+  {1\baselineskip}%            afterskip
+  {\normalfont\Large\bfseries}}% style
+  
+\renewcommand\subsection{\@startsection
+  {subsection}{2}{2cm}%name, level, indent
+  {-\baselineskip}%             beforeskip
+  {0.3\baselineskip}%            afterskip
+  {\normalfont\normalsize\itshape\bfseries}}% style
+  
+\renewcommand\subsubsection{\@startsection
+  {subsubsection}{3}{2.5cm}%name, level, indent
+  {-\baselineskip}%             beforeskip
+  {0.3\baselineskip}%            afterskip
+  {\normalfont\normalsize\itshape\bfseries}}% style
+\makeatother
+
+%Tableau de versionning
+\newenvironment{versions}%
+    {\vspace{0cm}\begin{table}[b]\begin{flushright}\begin{tabular}{l@{\hspace{0.5cm}}c@{\hspace{0.5cm}}r}\hline}%
+    {\end{tabular}\end{flushright}\end{table}}
+
+\begin{document}
+  
+  \title{Gestion de versions -- Introduction à Git}
+  \date{}
+
+  \maketitle
+  %\thispagestyle{empty}
+  
+  \section{Intro}
+
+    blah
+
+		
+
+    \begin{versions}
+      v0.0 & GP & 22/11/13
+    \end{versions}
+
+  %\bibliographystyle{alpha}
+  %\bibliography{biblio}
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% ispell-local-dictionary: "francais"
+%%% End: 
