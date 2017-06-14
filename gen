@@ -2,6 +2,7 @@
 
 make clean
 make introgit.pdf
-makeindex -s introgit.ist introgit.idx
+makeglossaries introgit
+makeindex -s introgitindex.ist introgit.idx
 pdflatex introgit
 make cleanlog

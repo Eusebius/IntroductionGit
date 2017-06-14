@@ -8,7 +8,9 @@
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage{xspace}
+\usepackage{hyperref}
 \usepackage{makeidx}
+\usepackage[toc,nonumberlist]{glossaries}
 \usepackage[missing=Informations\ de\ version\ indisponibles]{gitinfo}
 \sloppy
 
@@ -49,6 +51,16 @@
     {\end{tabular}\end{flushright}\end{table}}
 
 \makeindex
+\makeglossaries
+
+% Glossaire
+\longnewglossaryentry{vcs} %TODO refaire
+{
+  name=Système de gestion de versions,
+  sort=Systeme de gestion de versions,
+  plural=Systèmes de gestion de versions
+}
+{Système qui gère les versions.}
 
 \begin{document}
 \pagestyle{empty}
@@ -127,7 +139,7 @@
 \chapter*{Avant-propos}
 \thispagestyle{empty}
 
-TODO
+TODO \gls{vcs} qsdf
 
 % TODO avant-propos, objectifs et philosophie du document, utilisation
 % de termes anglais
@@ -361,9 +373,12 @@ TODO
 \section{Maintenir une différence constante entre deux branches} % TODO
 \index{strategie de fusion|stratégie de fusion!ours@\texttt{ours}}
 
-\appendix
+%\appendix
 
-\chapter{Glossaire} %TODO
+\glsaddall
+\printglossaries
+
+\cleardoublepage
 
 %TODO mettre un index séparé pour les commandes ?
 \printindex
