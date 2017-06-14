@@ -1,13 +1,14 @@
-\documentclass[a4paper,twoside,french]{article}
+\documentclass[a4paper,twoside,french]{book}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage[english,french]{babel}
+\usepackage[french]{babel}
 \usepackage{times}
 \usepackage{url}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage{xspace}
+\usepackage[missing=Informations\ de\ version\ indisponibles]{gitinfo}
 \sloppy
 
 \addtolength{\topmargin}{-2cm}
@@ -47,25 +48,171 @@
     {\end{tabular}\end{flushright}\end{table}}
 
 \begin{document}
+\pagestyle{empty}
+\bibliographystyle{alpha}
+
+\newcommand{\maintainer}{Guillaume Piolle}
+\newcommand{\maintainerurl}{\url{http://guillaume.piolle.fr/}}
+\newcommand{\maintainermail}{guillaume.piolle@centralesupelec.fr}
+\newcommand{\currentVersion}{0.0}
   
-  \title{Gestion de versions -- Introduction à Git}
-  \date{}
+\title{\Huge Gestion de versions\\Introduction à Git}
+\author{\Large \maintainer\\\maintainerurl\\\texttt{\maintainermail}\\}
+\date{}
+% TODO date, version and revision on front page
 
-  \maketitle
-  %\thispagestyle{empty}
+\maketitle
+
+\thanks{
+
+  \par\vspace*{\fill}
+
+  \paragraph*{Source}
+
+  Ce document a été initialement publié sur la plate-forme GitHub, à
+  l'adresse suivante~:
+  \centerline{\url{https://github.com/Eusebius/IntroductionGit}}
+
+  \paragraph*{Version}
+
+  \currentVersion\
+  (commit \gitAbbrevHash\ du \gitCommitterDate)
   
-  \section{Intro}
+  \paragraph*{Licence}
 
-    blah
+  Ce document est publié sous la licence \textit{Creative Commons
+    Attribution - Partage dans les Mêmes Conditions 3.0 France} (CC
+  BY-SA 3.0 FR). Le texte complet peut en être trouvé ici~:
+  \centerline{\url{https://creativecommons.org/licenses/by-sa/3.0/fr/legalcode}}
 
-		
+  C'est une licence libre au sens de la \textit{Free Software
+    Foundation}, qui autorise quiconque à réutiliser ce document pour
+  quelque usage que ce soit, y compris les usages commerciaux et la
+  création d'\oe uvres dérivées, à condition que celles-ci soient
+  elles-mêmes publiées sous une licence compatible.
 
-    \begin{versions}
-      v0.0 & GP & 22/11/13
-    \end{versions}
+  \paragraph*{Comment contribuer à ce document~?}
 
-  %\bibliographystyle{alpha}
-  %\bibliography{biblio}
+  N'importe qui peut proposer une contribution directe à ce document
+  sous la forme d'un \textit{pull request} sur le dépôt GitHub de la
+  publication initiale. Le ou les gestionnaires du dépôt décident
+  seuls de l'intégration des propositions dans le dépôt principal.
+
+  Les commentaires, suggestions d'évolution, signalements de coquilles
+  ou d'erreurs\ldots peuvent être directement soumis sur GitHub sous
+  forme d'\textit{issues}.
+
+  En vertu de la licence utilisée, n'importe qui peut également créer
+  une version librement dérivée (\textit{fork}) de ce document, à
+  condition de la publier sous une licence compatible.
+
+  \paragraph*{Liste des contributeurs}
+  Les personnes physiques suivantes ont contribué à la conception de
+  ce document, librement et en l'absence d'instructions d'aucune
+  sorte~; elles sont les seuls détenteurs des droits d'auteur
+  associés à ce document~:
+  \begin{itemize}
+  \item Guillaume Piolle \texttt{<guillaume.piolle@centralesupelec.fr>}.
+  \end{itemize}
+
+  \begin{versions}
+    v0.0 & GP & 22/11/13
+  \end{versions}
+}
+
+\frontmatter
+
+\chapter*{Avant-propos}
+\thispagestyle{empty}
+
+TODO
+
+% TODO avant-propos, objectifs et philosophie du document, utilisation
+% de termes anglais
+
+\mainmatter
+\pagestyle{headings}
+\setcounter{page}{1}
+\tableofcontents
+  
+\chapter{Introduction non facultative} %TODO
+\section{La gestion de versions} %TODO
+% TODO lien avec le développement, aspects collaboratifs, fichiers
+% texte et fichiers binaires
+\section{Systèmes de gestion de version} %TODO
+\subsection{Systèmes centralisés} %TODO
+% TODO exemples : CVS, Subversion, Visual SourceSafe, Perforce Helix,
+% VSTS (Visual Studio Team Services)
+\subsection{Systèmes décentralisés} %TODO
+% TODO exemples : Git, GNU Arch, Mercurial, BitKeeper, Bazaar, Darcs,
+% Veracity, VSTS (Visual Studio Team Services)
+\section{Le modèle de Git} %TODO
+% TODO philosophie, différents éléments du modèle
+\subsection{Principes et philosophie} %TODO
+\subsection{Git sur les différents systèmes d'exploitation} %TODO
+\subsection{Les différents éléments du modèle} %TODO
+\subsection{Structure d'un dépôt} %TODO
+% TODO notion de référence
+\subsection{Modèle de configuration} %TODO
+% TODO global / system / local, principales variables
+
+\chapter{Le minimum à maîtriser pour survivre avec Git} % TODO
+% TODO obtenir de l'aide
+\section{Enregistrer et lister des modifications} %TODO
+% TODO staging, commit, log, tags
+\section{Gestion des fichiers non versionnés} % TODO
+% TODO .gitignore
+\section{Gestion des \textit{tags}}
+% TODO navigation dans l'historique, reset, revert
+% TODO branches, navigation entre branches
+% TODO fusion et gestion des conflits
+\section{Travailler avec un dépôt distant}
+% TODO clone, push, pull
+
+\chapter{Aspects plus avancés} % TODO
+\section{Politiques de développement et de collaboration} %TODO
+% TODO gestion des branches et des dépôts
+\section{Le \textit{stash}} %TODO
+% cherry-pick, réécriture d'historique, amend
+\section{Stratégies de fusion} % TODO
+\section{Remaniement de l'historique}
+% TODO cherry-pick, réécriture d'historique, amend
+\section{Sous-modules} % TODO
+% TODO présenter brièvement les autres méthodes pour intégrer plusieurs projets
+
+\chapter{Pratiques usuelles}
+\section{Granularité des \textit{commits}} %TODO
+\section{Versionnement sémantique} 
+% TODO \cite{SemVer}
+\section{Organisation de dépôts multiples}
+% TODO notion de upstream et compagnie, différentes stratégies
+% TODO collaboration par pull request
+\section{Organisations des branches} %TODO
+% TODO branches par version, par fonctionnalités, par sous-projets,
+% gestion des tags...
+
+\chapter{Lien avec d'autres logiciels et plates-formes} % TODO
+% TODO bien préciser que les listes ne sont pas exhaustives
+\section{Forges en ligne} % TODO
+% TODO sourceforge, github, gitlab, bitbucket, gforge...
+\section{Environnements de développement} % TODO
+% TODO Eclipse, Netbeans
+\section{Intégration continue et assurance qualité} % TODO
+% TODO Code Climate, Jenkins, Travis...
+
+\chapter{Les petites recettes pratiques qui sauvent la vie} % TODO
+\section{Renoncer aux changements en cours} %TODO
+% TODO les subtilités de reset
+\section{Trouver l'origine d'un bug} % TODO
+% TODO git blame, git bisect. Remonter dans la section sur l'historique ?
+\section{Maintenir une différence constante entre deux branches} % TODO
+
+\chapter{Glossaire} %TODO
+\chapter{Index} %TODO
+
+\nocite{*}
+
+\bibliography{introgit}
 \end{document}
 
 
