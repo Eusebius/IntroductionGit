@@ -22,7 +22,4 @@ Le document LaTeX utilise BibTex et gitinfo.
 
 ## Licence et contributeurs
 
-Le document est publié sous une licence
-[CC-BY-SA 3.0 FR](https://creativecommons.org/licenses/by-sa/3.0/fr/). La
-liste des contributeurs est maintenue dans le document lui-même (et
-dans l'historique de développement sur GitHub).
+Le document est publié sous une licence [GNU General Public Licence v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html). La liste des contributeurs est maintenue dans le document lui-même (et dans l'historique de développement sur GitHub).
