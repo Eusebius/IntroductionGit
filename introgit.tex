@@ -54,15 +54,7 @@
     {\vspace{0cm}\begin{table}[b]\begin{flushright}\begin{tabular}{l@{\hspace{0.5cm}}c@{\hspace{0.5cm}}r}\hline}%
     {\end{tabular}\end{flushright}\end{table}}
 
-
-% Glossaire
-\longnewglossaryentry{vcs} %TODO refaire
-{
-  name=Système de gestion de versions,
-  sort=Systeme de gestion de versions,
-  plural=Systèmes de gestion de versions
-}
-{Système qui gère les versions.}
+\include{glossaire}
 
 \begin{document}
 \pagestyle{empty}
@@ -80,73 +72,11 @@
 
 \maketitle
 
-\thanks{
-
-  \par\vspace*{\fill}
-
-  \paragraph*{Source}
-
-  Ce document a été initialement publié sur la plate-forme GitHub, à
-  l'adresse suivante~:\\
-  \centerline{\url{https://github.com/Eusebius/IntroductionGit}}
-
-  \paragraph*{Version}
-
-  \currentVersion\
-  (commit \gitAbbrevHash\ du \gitCommitterDate)
-  
-  \paragraph*{Licence}
-
-  Ce document est publié sous la licence \textit{GNU General Public
-    License v2.0}. Le texte complet peut en être trouvé ici~:\\
-  \centerline{\url{https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html}}
-
-  C'est une licence libre, au sens de la \textit{Free Software
-    Foundation}, qui autorise quiconque à réutiliser ce document pour
-  quelque usage que ce soit, y compris les usages commerciaux et la
-  création d'\oe uvres dérivées, à condition que celles-ci soient
-  elles-mêmes publiées sous la même licence.
-
-  \paragraph*{Comment contribuer à ce document~?}
-
-  N'importe qui peut proposer une contribution directe à ce document
-  sous la forme d'un \textit{pull request} sur le dépôt GitHub de la
-  publication initiale. Le ou les gestionnaires du dépôt décident
-  seuls de l'intégration des propositions dans le dépôt principal.
-
-  Les commentaires, suggestions d'évolution, signalements de coquilles
-  ou d'erreurs\ldots peuvent être directement soumis sur GitHub sous
-  forme d'\textit{issues}.
-
-  En vertu de la licence utilisée, n'importe qui peut également créer
-  une version librement dérivée (\textit{fork}) de ce document, à
-  condition de la publier sous la même licence.
-
-  \paragraph*{Liste des contributeurs}
-  Les personnes physiques suivantes ont contribué à la conception de
-  ce document, librement et en l'absence d'instructions d'aucune
-  sorte~; elles sont les seuls détenteurs des droits d'auteur
-  associés à ce document~:
-  \begin{itemize}
-  \item Guillaume Piolle \texttt{<guillaume.piolle@centralesupelec.fr>}.
-  \end{itemize}
-
-  \begin{versions}
-    v0.0 & GP & 22/11/13
-  \end{versions}
-}
+\include{thanks}
 
 \frontmatter
 
-\chapter*{Avant-propos}
-\thispagestyle{empty}
-
-TODO \gls{vcs} qsdf
-
-% TODO avant-propos, objectifs et philosophie du document, utilisation
-% de termes anglais
-% Commandes et noms de fichiers en tt
-% Guide d'autoformation ?
+\include{chapitres/0-avant-propos}
 
 \mainmatter
 \pagestyle{headings}
@@ -168,216 +98,17 @@ TODO \gls{vcs} qsdf
 \index{gitignore@\texttt{gitignore}|see{\texttt{.gitignore}}}
 \index{IDE|see{environnement de développement intégré}}
 
-\chapter{Introduction non facultative} %TODO
-\section{La gestion de versions} %TODO
-\index{Gestion de versions}
-\index{commit@\textit{commit}}
-% TODO lien avec le développement, aspects collaboratifs, fichiers
-% texte et fichiers binaires
+\include{chapitres/1-intro}
 
-\section{Systèmes de gestion de version} %TODO
-\index{systeme de gestion de versions@système de gestion de versions}
+\include{chapitres/2-minimum}
 
-\subsection{Systèmes centralisés} %TODO
-\index{systeme de gestion de versions@système de gestion de versions!centralises@centralisé}
-% TODO CVS
-\index{CVS}
-% TODO Subversion
-\index{Subversion}
-% TODO Visual SourceSafe
-\index{Visual SourceSafe}
-% TODO Perforce Helix
-\index{Perforce Helix}
-% TODO VSTS (Visual Studio Team Services)
-\index{Visual Studio Team Services}
+\include{chapitres/3-avance}
 
-\subsection{Systèmes décentralisés} %TODO
-\index{systeme de gestion de versions@système de gestion de versions!decentralises@décentralisé}
-% TODO Git
-\index{Git}
-% TODO GNU arch
-\index{GNU arch}
-% TODO Mercurial
-\index{Mercurial}
-% TODO BitKeeper
-\index{BitKeeper}
-% TODO Bazaar
-\index{Bazaar}
-% TODO Darcs
-\index{Darcs}
-% TODO Veracity
-\index{Veracity}
-% TODO VSTS (Visual Studio Team Services)
-\index{Visual Studio Team Services}
+\include{chapitres/4-pratiques}
 
-\section{Le modèle de Git} %TODO
-% TODO philosophie, différents éléments du modèle
+\include{chapitres/5-liens}
 
-\subsection{Principes et philosophie} %TODO
-
-\subsection{Git sur les différents systèmes d'exploitation} %TODO
-\index{Windows}
-\index{Linux}
-\index{macOS}
-
-\subsection{Les différents éléments du modèle} %TODO
-
-\subsection{Structure d'un dépôt} %TODO
-\index{depot@dépôt}
-\index{depot@dépôt!local}
-% TODO notion de référence
-
-\subsection{Modèle de configuration} %TODO
-\index{configuration}
-\index{git@\texttt{git}!config@\texttt{config}}
-\index{global@\texttt{global}}
-\index{system@\texttt{system}}
-\index{local@\texttt{local}}
-% TODO global / system / local, principales variables
-
-\chapter{Le minimum à maîtriser pour survivre avec Git} % TODO
-% TODO obtenir de l'aide
-\index{git@\texttt{git}!help@\texttt{help}}
-
-\section{Enregistrer et lister des modifications} %TODO
-% TODO staging, add, rm commit, log
-\index{git@\texttt{git}!commit@\texttt{commit}}
-\index{git@\texttt{git}!log@\texttt{log}}
-\index{historique}
-\index{git@\texttt{git}!add@\texttt{add}}
-\index{git@\texttt{git}!rm@\texttt{rm}}
-
-\section{Gestion des fichiers non versionnés} % TODO
-% TODO .gitignore
-\index{ignorer un fichier}
-\index{.gitignore@\texttt{.gitignore}}
-
-\section{Gestion des \textit{tags}}
-% TODO navigation dans l'historique, reset, revert
-% TODO branches, navigation entre branches
-% TODO fusion et gestion des conflits
-\index{tag@\textit{tag}}
-\index{git@\texttt{git}!tag@\texttt{tag}}
-\index{git@\texttt{git}!reset@\texttt{reset}}
-\index{git@\texttt{git}!revert@\texttt{revert}}
-\index{historique}
-\index{git@\texttt{git}!branch@\texttt{branch}}
-\index{branche}
-\index{git@\texttt{git}!checkout@\texttt{checkout}}
-\index{git@\texttt{git}!merge@\texttt{merge}}
-
-\section{Travailler avec un dépôt distant}
-% TODO clone, push, pull, fetch, merge
-\index{depot@dépôt!distant}
-\index{git@\texttt{git}!clone@\texttt{clone}}
-\index{git@\texttt{git}!push@\texttt{push}}
-\index{git@\texttt{git}!pull@\texttt{pull}}
-\index{git@\texttt{git}!fetch@\texttt{fetch}}
-\index{git@\texttt{git}!merge@\texttt{merge}}
-
-\chapter{Aspects plus avancés} % TODO
-
-\section{Politiques de développement et de collaboration} %TODO
-% TODO gestion des branches et des dépôts
-\index{branche}
-\index{depot@dépôt!distant}
-\index{depot@dépôt!upstream@\textit{upstream}}
-\index{depot@dépôt!downstream@\textit{downstream}}
-
-\section{Le \textit{stash}} %TODO
-\index{git@\texttt{git}!stash@\texttt{stash}}
-
-\section{Stratégies de fusion} % TODO
-\index{git@\texttt{git}!merge@\texttt{merge}}
-\index{strategie de fusion@stratégie de fusion}
-\index{strategie de fusion@stratégie de fusion!ours@\texttt{ours}}
-\index{strategie de fusion@stratégie de fusion!theirs@\texttt{theirs}}
-\index{strategie de fusion@stratégie de fusion!octopus@\texttt{octopus}}
-
-\section{Remaniement de l'historique}
-\index{historique}
-\index{git@\texttt{git}!cherry-pick@\texttt{cherry-pick}}
-\index{git@\texttt{git}!filter-branch@\texttt{filter-branch}}
-\index{git@\texttt{git}!amend@\texttt{amend}}
-% TODO cherry-pick, réécriture d'historique, amend
-
-\section{Sous-modules} % TODO
-\index{sous-module}
-% TODO présenter brièvement les autres méthodes pour intégrer plusieurs projets
-
-\chapter{Pratiques usuelles} % TODO
-
-\section{Granularité des \textit{commits}} %TODO
-\index{commit@\textit{commit}}
-
-\section{Versionnement sémantique} 
-% TODO \cite{SemVer}
-\index{versionnement!semantique@sémantique}
-
-\section{Organisation de dépôts multiples} % TODO duplicat avec Politiques de développement et de collaboration ?
-% TODO notion de upstream et compagnie, différentes stratégies
-% TODO collaboration par pull request
-\index{depot@dépôt!distant}
-\index{depot@dépôt!upstream@\textit{upstream}}
-\index{depot@dépôt!downstream@\textit{downstream}}
-\index{pull request@\textit{pull request}}
-
-\section{Organisations des branches} %TODO
-% TODO branches par version, par fonctionnalités, par sous-projets,
-% gestion des tags...
-\index{branche}
-\index{tag@\textit{tag}}
-
-\chapter{Lien avec d'autres logiciels et plates-formes} % TODO
-% TODO bien préciser que les listes ne sont pas exhaustives
-
-\section{Forges en ligne} % TODO
-% TODO sourceforge, github, gitlab, bitbucket, gforge...
-\index{forge}
-\index{SourceForge}
-\index{GitHub}
-\index{GitLab}
-\index{BitBucket}
-\index{GForge}
-
-\section{Environnements de développement} % TODO
-% TODO Eclipse, Netbeans
-\index{environnement de developpement integre@environnement de développement intégré}
-\index{Eclipse}
-\index{Netbeans}
-
-\section{Intégration continue et assurance qualité} % TODO
-% TODO Code Climate, Jenkins, Travis...
-\index{intégration continue}
-\index{assurance qualité}
-\index{couverture}
-\index{test}
-\index{CodeClimate}
-\index{Jenkins}
-\index{Travis CI}
-
-\chapter{Les petites recettes pratiques qui sauvent la vie} % TODO
-
-\section{Alias pour l'affichage de l'historique} %TODO
-\index{alias}
-\index{historique}
-\index{git@\texttt{git}!log@\texttt{log}}
-
-\section{Renoncer aux changements en cours} %TODO
-\index{git@\texttt{git}!reset@\texttt{reset}}
-\index{git@\texttt{git}!stash@\texttt{stash}}
-% TODO les subtilités de reset
-
-\section{Trouver l'origine d'un bogue} % TODO
-\index{git@\texttt{git}!blame@\texttt{blame}}
-\index{git@\texttt{git}!bisect@\texttt{bisect}}
-\index{debogage@débogage}
-\index{bogue}
-\index{historique}
-% TODO git blame, git bisect. Remonter dans la section sur l'historique ?
-
-\section{Maintenir une différence constante entre deux branches} % TODO
-\index{strategie de fusion|stratégie de fusion!ours@\texttt{ours}}
+\include{chapitres/6-recettes}
 
 \appendix
 
