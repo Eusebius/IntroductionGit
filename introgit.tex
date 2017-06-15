@@ -8,11 +8,15 @@
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage{xspace}
+\usepackage[makeindex]{imakeidx}
 \usepackage{hyperref}
-\usepackage{makeidx}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage[missing=Informations\ de\ version\ indisponibles]{gitinfo}
+%\usepackage[nottoc]{tocbibind}
 \sloppy
+
+\makeindex[options= -s introgitindex.ist]
+\makeglossaries
 
 \addtolength{\topmargin}{-2cm}
 \addtolength{\textheight}{+3cm}
@@ -50,8 +54,6 @@
     {\vspace{0cm}\begin{table}[b]\begin{flushright}\begin{tabular}{l@{\hspace{0.5cm}}c@{\hspace{0.5cm}}r}\hline}%
     {\end{tabular}\end{flushright}\end{table}}
 
-\makeindex
-\makeglossaries
 
 % Glossaire
 \longnewglossaryentry{vcs} %TODO refaire
@@ -373,19 +375,26 @@ TODO \gls{vcs} qsdf
 \section{Maintenir une différence constante entre deux branches} % TODO
 \index{strategie de fusion|stratégie de fusion!ours@\texttt{ours}}
 
-%\appendix
+\appendix
 
 \glsaddall
+\nocite{*}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\glossaryname}
 \printglossaries
 
 \cleardoublepage
-
-%TODO mettre un index séparé pour les commandes ?
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
 \printindex
 
-\nocite{*}
-
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
 \bibliography{introgit}
+
 \end{document}
 
 
