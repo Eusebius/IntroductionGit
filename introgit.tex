@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside,french]{book}
+\documentclass[a4paper,twoside,french,11pt]{book}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage[french]{babel}
@@ -24,6 +24,7 @@
 \setlength{\evensidemargin}{\oddsidemargin}
 \addtolength{\textwidth}{+3cm}
 
+
 %\renewcommand\section{\@startsection {section}{1}{\z@}%
 %	{-3.5ex \@plus -1ex \@minus -.2ex}%
 %	{2.3ex \ at plus.2ex}%
@@ -47,6 +48,20 @@
   {-\baselineskip}%             beforeskip
   {0.3\baselineskip}%            afterskip
   {\normalfont\normalsize\itshape\bfseries}}% style
+
+\newlength{\drop}
+\newcommand*{\titleSI}{\begingroup
+\drop = 0.2\textheight
+\centering
+\vspace*{\drop}
+{\Huge \textsc{\@title}}\\[\baselineskip]
+{\Huge \textsc{\subtitle}}\\[12\baselineskip]
+{\Large \textsc{\maintainer}}\\[\baselineskip]
+{\large \texttt{\url{\maintainerurl}}}\\%[\baselineskip]
+{\large \href{mailto:\maintainermail}{\texttt{\maintainermail}}}\par
+\vfill
+{\Large Version \currentVersion}\par
+\endgroup}
 \makeatother
 
 %Tableau de versionning
@@ -61,18 +76,18 @@
 \bibliographystyle{alpha}
 
 \newcommand{\maintainer}{Guillaume Piolle}
-\newcommand{\maintainerurl}{\url{http://guillaume.piolle.fr/}}
+\newcommand{\maintainerurl}{http://guillaume.piolle.fr/}
 \newcommand{\maintainermail}{guillaume.piolle@centralesupelec.fr}
 \newcommand{\currentVersion}{0.0}
   
-\title{\Huge Gestion de versions\\Introduction à Git}
-\author{\Large \maintainer\\\maintainerurl\\\texttt{\maintainermail}\\}
+\title{Gestion de versions}
+\newcommand{\subtitle}{Introduction à Git}
+\author{\maintainer}
 \date{}
-% TODO date, version and revision on front page
 
-\maketitle
+\titleSI
 
-\include{thanks}
+\include{infos}
 
 \frontmatter
 

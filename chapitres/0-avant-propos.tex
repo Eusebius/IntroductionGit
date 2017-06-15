@@ -1,9 +1,93 @@
-\chapter*{Avant-propos}
+\chapter*{Avant-propos}\label{chapAvantPropos}
 \thispagestyle{empty}
 
-TODO \gls{vcs} qsdf
+\section*{À qui s'adresse ce document~?}
 
-% TODO avant-propos, objectifs et philosophie du document, utilisation
-% de termes anglais
-% Commandes et noms de fichiers en tt
-% Guide d'autoformation ?
+Cet ouvrage a pour objectif de constituer une initiation à la gestion
+de versions d'une manière générale, et à l'utilisation de Git en
+particulier. Il est conçu comme un support pédagogique à l'usage
+d'étudiants en informatique, ou de toute personne curieuse du sujet
+ayant déjà une pratique raisonnable de l'outil informatique.
+
+Le cas d'usage principal de Git et des autres systèmes de gestion de
+versions est le développement logiciel en équipe. Néanmoins, il n'est
+pas nécessaire d'être développeur pour tirer un bénéfice de
+l'utilisation de Git. Les systèmes de gestion de versions peuvent par
+exemple être utilisés pour gérer la rédaction de documents, comme
+celui que vous avez sous les yeux\footnote{Et dont vous pouvez trouver
+  le dépôt ici~: \url{https://github.com/Eusebius/IntroductionGit}.},
+à condition que ces derniers soient manipulés en priorité sous un
+format textuel (c'est-à-dire plutôt des fichiers \LaTeX
+qu'OpenDocument, par exemple). Il devient particulièrement utile
+lorsque plusieurs (voire de très nombreuses) personnes interviennent
+dans le processus de conception. Cependant, les fonctionnalités des
+systèmes de gestion de versions les rendent également très utiles à
+des auteurs isolés souhaitant conserver et manipuler l'historique de
+leur processus de création (en se ménageant par exemple la possibilité
+de revenir à n'importe quel état antérieur ou de gérer concurremment
+des variantes d'un même projet).
+
+Git est à l'origine conçu pour le système d'exploitation Linux. Les
+utilisateurs Linux ou macOS non réfractaires à la ligne de commande
+pourront donc utiliser directement les commandes présentées ici. Que
+les utilisateurs de Windows se rassurent, des outils et techniques ont
+été développés très tôt pour permettre d'utiliser Git sur leurs
+systèmes, et il y a maintenant de nombreuses manières de profiter de
+Git sous Windows, au travers de logiciels dédiés ou bien directement
+en ligne de commande. La section \ref{GitOS} donne quelques pistes
+pour l'utilisation de Git sur ces systèmes.
+
+Il est important de noter que cet ouvrage n'est pas une documentation
+complète et exhaustive du logiciel Git et qu'il ne traite pas (loin
+s'en faut) tous les sujets qui s'y rapportent. Ce document demeure une
+introduction, qui pourra être complétée d'une part par la lecture des
+ouvrages listés dans la bibliographie (en particulier le livre de
+référence \textit{Pro Git} \cite{ProGit} accessible en ligne), d'autre
+part et surtout par la pratique (et la confrontation à des cas
+d'utilisation réels).
+
+\section*{Comment lire ce document~?}
+
+Un étudiant pressé de s'initier à une utilisation basique de Git, pour
+les besoins d'un cours ou d'un projet limité dans le temps (ou
+quiconque désirant une introduction rapide au sujet) pourra se
+focaliser sur les chapitres \ref{chapIntro} et \ref{chapMinimum}, qui
+ont pour objectif de lui mettre le pied à l'étrier et de le rendre
+opérationnel au prix d'un effort de lecture et de pratique limité. Si
+vous devez travailler sur Git avec un logiciel particulier, il est
+possible que le chapitre \ref{chapLiens} comporte une section dédiée à
+vos outils, vous proposant a minima des moyens de vous documenter sur
+leur intégration avec Git.
+
+Les étudiants libérés de l'urgence de l'évaluation et tous les
+lecteurs suffisamment curieux et disponibles pourront alors compléter
+leur découverte en parcourant le chapitre \ref{chapAvance}, qui
+présente des fonctionnalités plus fouillées de Git, le chapitre
+\ref{chapPratiques}, qui introduit certains usages et pratiques
+couramment adoptés et le chapitre \ref{chapLiens} (en fonction de vos
+besoins) sur l'intégration avec d'autres logiciels, plates-formes et
+systèmes d'exploitation.
+
+Le chapitre \ref{chapRecettes} a davantage vocation à devenir, au fur
+et à mesure de l'évolution de cet ouvrage, un petit catalogue de
+recettes, de patrons de conception, de \og trucs\fg bien pratiques
+pour des situations problématiques ou des scénarios d'usage couramment
+rencontrés.
+
+\section*{Conventions utilisées}
+
+Tout au long de cet ouvrage, nous adopterons les conventions
+typographiques suivantes~:
+\begin{itemize}
+\item Les termes en \textit{italique} sont ceux qui proviennent d'une
+  langue étrangère (l'anglais, sans surprise) mais qui restent
+  utilisés tels quels dans le texte, soit que leur contrepartie en
+  français soit moins usitée par les développeurs francophones, soit
+  qu'il nous paraisse essentiel que le terme anglais soit connu, soit
+  qu'ils correspondent à des commandes ou à des notions bien définies
+  dans Git~;
+\item Les termes en \textbf{gras} désignent des notions et concepts
+  nouvellement introduits~;
+\item Les termes en \texttt{chasse fixe} désignent des commandes, des
+  options de configuration ou des noms de fichiers.
+\end{itemize}
