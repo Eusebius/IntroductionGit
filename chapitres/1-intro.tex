@@ -2,8 +2,11 @@
 \section{La gestion de versions} %TODO
 \index{Gestion de versions}
 \index{commit@\textit{commit}}
-% TODO lien avec le développement, aspects collaboratifs, fichiers
-% texte et fichiers binaires
+% TODO lien avec le développement
+% Suivi d'historique, retour en arrière. Notion de révision
+% Collaboration à plusieurs, dépôts locaux et distants
+% Développement de fonctionnalités en parallèle, fusion, résolution de conflits
+% fichiers texte et fichiers binaires
 
 \section{Systèmes de gestion de version} %TODO
 \index{systeme de gestion de versions@système de gestion de versions}
@@ -51,6 +54,19 @@
 \index{macOS}
 
 \subsection{Les différents éléments du modèle} %TODO
+
+\index{SHA1}
+% TODO Expliquer en footnote que Git utilise SHA1 comme un code de
+% détection d'erreur et non comme un algorithme de hachage
+% cryptographique. En théorie, il est possible de falsifier le contenu
+% d'un commit Git utilisant SHA1, par exemple pour y insérer du code
+% malveillant, en conservant le même haché. Subversion utilise SHA1
+% également, et les PDF en collision le faisaient planter, nécessitant
+% un correctif. Sauf que Git utilise également SHA1 pour signer les
+% commits, et là évidemment ça pose un problème d'authenticité et plus
+% seulement d'intégrité.
+% http://www.zdnet.fr/actualites/collision-sha-1-linus-torvalds-se-veut-rassurant-sur-git-39849070.htm
+% https://twitter.com/matthew_d_green/status/835864260240683009/photo/1
 
 \subsection{Structure d'un dépôt} %TODO
 \index{depot@dépôt}
