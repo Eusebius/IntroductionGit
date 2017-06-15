@@ -10,15 +10,19 @@ La suite du document présente des concepts plus avancés, des bonnes pratiques 
 
 La publication originale de ce document est le projet GitHub [Eusebius/IntroductionGit](https://github.com/Eusebius/IntroductionGit).
 
-## Mainteneur
+## Comment compiler ?
 
-Guillaume Piolle (guillaume.piolle@centralesupelec.fr)
+Sous Linux, le script `gen` devrait compiler correctement le document au format PDF.
+
+Le document LaTeX utilise notamment `pdflatex`, `BibTeX` et `gitinfo`.
 
 ## Comment contribuer ?
 
 Les contributeurs volontaires sont invités à proposer des *pull requests* sur le projet GitHub. Les commentaires, suggestions d'évolution, signalements de coquilles ou d'erreurs peuvent être directement soumis comme des *issues* du projet GitHub.
 
-Le document LaTeX utilise BibTex et gitinfo.
+## Mainteneur
+
+Guillaume Piolle (guillaume.piolle@centralesupelec.fr)
 
 ## Licence et contributeurs
 
