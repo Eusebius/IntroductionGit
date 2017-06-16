@@ -1,6 +1,8 @@
 % Insérer des lettres dans l'index
 heading_prefix "{\\bfseries\\hfil "
 heading_suffix "\\hfil}\\nopagebreak\n"
+symhead_positive "Symboles"
+symhead_negative "symboles"
 headings_flag 1
 
 % Ajouter des lignes de points
