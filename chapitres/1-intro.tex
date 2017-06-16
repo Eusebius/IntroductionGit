@@ -1,8 +1,8 @@
 \chapter{Introduction non facultative}\label{chapIntro}
 
 Ce chapitre présente les besoins et les concepts de la gestion de
-version d'une manière générale, ainsi qu'un aperçu des différentes
-familles de systèmes de gestion de version. Il se focalise ensuite sur
+versions d'une manière générale, ainsi qu'un aperçu des différentes
+familles de systèmes de gestion de versions. Il se focalise ensuite sur
 Git, qui sera l'objet du reste de cet ouvrage, pour en expliquer la
 philosophie et le modèle de fonctionnement.
 
@@ -27,9 +27,9 @@ Les outils de gestion de versions doivent permettre d'identifier
 plusieurs instances (éventuellement à des stades de développement
 différents) du même projet. Ces instances peuvent correspondre,
 suivant les cas, à l'espace de travail direct d'un développeur ou d'un
-ensemble de développeur, à une instance de référence commune partagée
-par l'ensemble ou un sous-ensemble des développeurs, à une instance de
-publication des versions stables du projet\ldots
+ensemble de développeurs, à une instance de référence commune partagée
+par tous ou par un sous-groupe des développeurs, à une instance de
+mise à disposition du public des versions stables du projet\ldots
 
 Ces instances sont désignées sous le terme générique de
 \textbf{dépôt}\index{depot@dépôt} (\textit{repository} en
@@ -38,7 +38,7 @@ choix d'organisation et le système de gestion de versions utilisé, un
 dépôt peut représenter le projet dans son intégralité ou bien
 seulement un sous-ensemble, l'intégralité de son historique ou bien
 seulement une partie. Un dépôt peut être
-\textbf{local}\index{depot@dépôt!local}, c'est-à-dire situé surl la
+\textbf{local}\index{depot@dépôt!local}, c'est-à-dire situé sur la
 machine de développement d'un des contributeurs (sans être
 nécessairement confondu avec l'espace de travail direct du
 développeur), ou bien \textbf{distant}\index{depot@dépôt!distant},
@@ -52,7 +52,7 @@ l'historique du projet, sous la forme d'un ensemble de
 anglais). Une révision est un ensemble atomique et identifiable de
 modifications liées par une certaine unité sémantique, portant sur un
 ou plusieurs fichiers, réalisées par un même contributeur identifié,
-explicitement introduites dans le projet accompagnées d'un message
+explicitement introduites dans le projet, accompagnées d'un message
 explicatif et d'autres méta-données, comme la date\footnote{Dans
   certains systèmes, comme par exemple Overleaf\index{Overleaf}, qui
   est une surcouche web de Git pour la rédaction collaborative
@@ -60,7 +60,7 @@ explicatif et d'autres méta-données, comme la date\footnote{Dans
   générées automatiquement, de manière périodique ou à chaque
   modification élémentaire. Dans ce cas, une révision peut n'avoir ni
   unité sémantique ni message explicatif, ce qui limite forcément
-  l'utilité de l'historique correspondant. D'autre part, l'unicité
+  l'utilité de l'historique résultant. D'autre part, l'unicité
   sémantique des révisions est une propriété qui, si elle est
   désirable, dépend en grande partie de la bonne volonté des
   contributeurs\ldots}. L'atomicité signifie que les modifications
@@ -70,7 +70,7 @@ révision puisse venir interférer ni que le projet puisse se retrouver
 dans un état incohérent (avec une révision partiellement
 appliquée)\footnote{Il existe des systèmes de gestion de versions dans
   lesquels les révisions ne sont pas atomiques. Nous ne les
-  mentionneront pas ici dans l'espoir que leur nom disparaisse à
+  mentionneront pas ici, dans l'espoir que leur nom disparaisse à
   jamais de la mémoire collective et de l'histoire de l'informatique
   (pour plus de détails sur les bonnes pratiques du révisionnisme avec
   Git, les nostalgiques du Ministère de la Vérité \cite{Orwell}
@@ -82,7 +82,7 @@ en question.
 Dans le cas le plus simple, un historique est une succession linéaire
 de révisions, chacune s'appuyant sur la précédente
 (figure~\ref{fig:historiqueLineaire}). Dans la majorité des cas,
-cependant, il en ira tout autrement\ldots Dans la syntaxe graphique
+cependant, il en ira tout autrement\ldots\ Dans la syntaxe graphique
 que nous adoptons pour les historiques, les cercles représentent les
 révisions et les flèches représentent les dépendances entre
 ces révisions. Le sens de ces flèches n'est donc pas le sens d'écoulement
@@ -111,6 +111,7 @@ permettre de déterminer~:
 \item La révision ayant introduit une fonctionnalité, un
   bogue\index{bogue}, une régression\index{regression@régression}, une
   vulnérabilité\ldots
+\item \ldots
 \end{itemize}
 
 \subsection{Intégration de contributions dans un même projet} % TODO 
