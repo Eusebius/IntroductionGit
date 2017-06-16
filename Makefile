@@ -182,7 +182,7 @@ cleanpdffig:
 
 cleanfig: cleanepsfig cleanpdffig
 
-clean: cleanfig
+clean: #cleanfig
 	-rm -f $(TEX_DIR)/*.aux
 	-rm -f *.dvi *.ps *.pdf
 	-rm -f *.aux *.log *.toc *.out
