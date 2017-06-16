@@ -1,15 +1,82 @@
- \chapter{Introduction non facultative}\label{chapIntro} %TODO
-\section{La gestion de versions} %TODO
-\index{Gestion de versions}
-\index{commit@\textit{commit}}
-% TODO lien avec le développement
-% Suivi d'historique, retour en arrière. Notion de révision
-% Collaboration à plusieurs, dépôts locaux et distants
+\chapter{Introduction non facultative}\label{chapIntro}
+
+Ce chapitre présente les besoins et les concepts de la gestion de
+version d'une manière générale, ainsi qu'un aperçu des différentes
+familles de systèmes de gestion de version. Il se focalise ensuite sur
+Git, qui sera l'objet du reste de cet ouvrage, pour en expliquer la
+philosophie et le modèle de fonctionnement.
+
+\section{Les besoins du génie logiciel}
+
+La \textbf{gestion de versions}\index{Gestion de versions} (en anglais
+\textit{version control} ou \textit{revision control}) est une
+fonctionnalité, ou plutôt une famille de fonctionnalités, qui trouve
+son origine dans les besoins du développement logiciel en
+équipe. Plusieurs développeurs travaillant ensemble sur le même
+ensemble de fichiers, même si les domaines d'intervention de chacun
+sont clairement définis, doivent nécessairement trouver un moyen de
+collaborer de manière constructive, sans que les contributions des uns
+ne deviennent un souci pour les autres. La gestion de version, en
+s'appuyant sur un \textbf{historique}\index{historique} raisonné du
+développement, a pour vocation de répondre à l'ensemble des besoins
+détaillés ci-après.
+
+\subsection{Gestion des instances du projet}
+
+Les outils de gestion de versions doivent permettre d'identifier
+plusieurs instances (éventuellement à des stades de développement
+différents) du même projet. Ces instances peuvent correspondre,
+suivant les cas, à l'espace de travail direct d'un développeur ou d'un
+ensemble de développeur, à une instance de référence commune partagée
+par l'ensemble ou un sous-ensemble des développeurs, à une instance de
+publication des versions stables du projet\ldots
+
+Ces instances sont désignées sous le terme générique de
+\textbf{dépôt}\index{depot@dépôt} (\textit{repository} en
+anglais). Chaque dépôt est une représentation du projet. Suivant les
+choix d'organisation et le système de gestion de versions utilisé, un
+dépôt peut représenter le projet dans son intégralité ou bien
+seulement un sous-ensemble, l'intégralité de son historique ou bien
+seulement une partie. Un dépôt peut être
+\textbf{local}\index{depot@dépôt!local}, c'est-à-dire situé surl la
+machine de développement d'un des contributeurs (sans être
+nécessairement confondu avec l'espace de travail direct du
+développeur), ou bien \textbf{distant}\index{depot@dépôt!distant},
+déporté sur un serveur accessible via le réseau.
+
+\subsection{Intégration de contributions dans un même projet} % TODO 
+
+Les différentes personnes participant à un même projet doivent pouvoir
+voir leurs contributions individuelles intégrées au projet, idéalement
+de manière fluide, transparente et indolore.
+
+Intégration des contributions de différentes personnes dans un
+  même projet, en permettant la résolution des incohérences pouvant
+  survenir entre des modifications concurrentes~;
+
 % Développement de fonctionnalités en parallèle, fusion, résolution de conflits
-% fichiers texte et fichiers binaires
+% Notion de conflit
+\index{conflit}
+
+%  Notion de révision
+\index{revision@révision}
+
+\subsection{Gestion de l'historique} % TODO 
+
+Gestion d'un historique, permettant notamment le retour ou la
+visualisation du projet à une version antérieure~;
+
+\subsection{Gestion de variantes différentes du même projet} % TODO 
+
+Possibilité de créer et de maintenir simultanément des variantes du
+projet, par exemple pour expérimenter l'utilisation de nouvelles
+technologies, le développement de nouvelles fonctionnalités ou la mise
+en place d'une nouvelle organisation~;
 
 \section{Systèmes de gestion de version} %TODO
 \index{systeme de gestion de versions@système de gestion de versions}
+
+% fichiers texte et fichiers binaires
 
 \subsection{Systèmes centralisés} %TODO
 \index{systeme de gestion de versions@système de gestion de versions!centralises@centralisé}
@@ -54,6 +121,8 @@
 \index{macOS}
 
 \subsection{Les différents éléments du modèle} %TODO
+
+\index{.git@\texttt{.git}}
 
 \index{SHA1}
 % TODO Expliquer en footnote que Git utilise SHA1 comme un code de
