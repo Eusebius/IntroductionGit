@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{latexsym}
+\usepackage{color}
+\usepackage{listingsutf8}
 \usepackage{xspace}
 \usepackage[makeindex]{imakeidx}
 \usepackage{hyperref}
@@ -28,6 +30,28 @@
 %	{-3.5ex \@plus -1ex \@minus -.2ex}%
 %	{2.3ex \ at plus.2ex}%
 %	{\reset@font\Large\bfseries}}
+
+\lstset{
+  language=bash,
+  % backgroundcolor=\color[rgb]{0.91,0.91,0.95}, %bleu
+  % backgroundcolor=\color[rgb]{0.89,0.93,0.89}, %vert
+  backgroundcolor=\color{white},
+  basicstyle=\scriptsize\ttfamily,
+  % numbers=none,
+  numberstyle=\footnotesize,
+  numbersep=5pt,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  frame=tb,
+  tabsize=2,
+  % captionpos=t,
+  morecomment=[l]{//},
+  columns=flexible,
+  inputencoding=utf8/latin1,
+  % escapeinside={/*@}{@*/}
+  extendedchars=\true,
+  literate={ù}{{\`u}}1 {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {â}{{\^a}}1 {û}{{\^u}}1 {Ç}{{\c C}}1 {à }{{\`a} }2
+}
 
 \makeatletter
 \renewcommand\section{\@startsection
@@ -106,6 +130,7 @@
 % Redirections d'index
 \index{arch|see{GNU arch}}
 \index{commit@\textit{commit}|see{révision}}
+\index{gestionnaire de versions|see{système de gestion de versions}}
 \index{gitignore@\texttt{gitignore}|see{\texttt{.gitignore}}}
 \index{Helix|see{Perforce Helix}}
 \index{IDE|see{environnement de développement intégré}}

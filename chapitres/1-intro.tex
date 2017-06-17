@@ -142,15 +142,17 @@ ignorant l'entreprise de l'autre. Le premier corrige le document pour
 lui faire dire qu'Oceania et Eurasia sont alliés depuis toujours dans
 une guerre contre Estasia, pendant que le deuxième introduit une
 modification différente, reflétant sa propre vision du monde et sa
-propre expertise de la géopolitique. Ces deux révisions traduisent des
-réalités complètement différentes et, dans ce cas précis, leurs
-différences ne peuvent être résolues automatiquement par un système de
-gestion de versions. Un conflit survient lorsque les deux rédacteurs
-tentent de faire accepter leurs révisions dans le dépôt\footnote{Le
-  moment exact d'apparition du conflit et les possibiltés de
-  résolution correspondantes dépendent du modèle utilisé par le
-  système de gestion de versions.}. Un utilisateur humain
-(typiquement, l'un des deux contributeurs) doit alors intervenir pour
+propre expertise de la
+géopolitique\footnote{\url{https://en.wikipedia.org/wiki/Communications_Over_Various_Feeds_Electronically_for_Engagement_Act}.}. Ces
+deux révisions traduisent des réalités complètement différentes et,
+dans ce cas précis, leurs différences ne peuvent être résolues
+automatiquement par un système de gestion de versions. Un conflit
+survient lorsque les deux rédacteurs tentent de faire accepter leurs
+révisions dans le dépôt\footnote{Le moment exact d'apparition du
+  conflit et les possibiltés de résolution correspondantes dépendent
+  du modèle utilisé par le système de gestion de versions.}. Un
+utilisateur humain (typiquement, l'un des deux contributeurs) doit
+alors intervenir pour
 \textbf{résoudre}\index{conflit!resolution@résolution} le conflit et
 déterminer la version du document devant apparaître dans le dépôt.
 
@@ -179,12 +181,48 @@ projet. C'est pour cela qu'elle n'est jamais utilisée comme moyen
 principal de gestion des conflits dans les systèmes modernes de
 gestion de versions.
 
-% TODO 
-Intégration des contributions de différentes personnes dans un
-  même projet, en permettant la résolution des incohérences pouvant
-  survenir entre des modifications concurrentes~;
+La solution généralement retenue pour intégrer les modifications
+provenant de contributeurs différents est la
+\textbf{fusion}\index{fusion}. Cette méthode consiste à toujours
+accepter les modifications du premier contributeur, puis à tenter
+d'accepter les modifications des suivants en essayant de les intégrer
+avec les modifications déjà enregistrées. Si ces modifications n'ont
+pas lieu sur les mêmes lignes de texte, la plupart des systèmes de
+gestion de versions modernes pourront effectuer la fusion de manière
+automatique sans lever d'alerte\footnote{Attention, le fait que des
+  modifications impactent des lignes différentes ne veut pas forcément
+  dire qu'elles sont compatibles, en particulier lorsqu'il s'agit de
+  code source. Des modifications incohérentes entre elles à deux
+  endroits du code peuvent engendrer toutes sortes d'erreurs, que le
+  gestionnaire de versions ne sera pas forcément capable de
+  détecter. En d'autres termes, l'absence de conflits n'est pas une
+  garantie que tout s'est bien passé. D'autres outils de génie
+  logiciel, comme le test systématique (intégré à des outils
+  d'intégration continue comme ceux décrits dans la
+  section~\ref{secCI}) ou l'analyse statique, restent nécessaires pour
+  s'assurer de la qualité du code résultant.}. Dans les cas où le
+système ne peut trancher lui-même, comme dans notre scénario, il
+avertit le contributeur tentant d'effectuer la fusion qu'un conflit
+existe, en lui présentant les différentes versions des passages posant
+problème. Dans notre scénario, le deuxième rédacteur pourrait par
+exemple se voir présenter le texte de la figure~\ref{fig:conflitTxt},
+résultant de la fusion. Il lui reviendrait alors de déterminer la
+variante du texte devant être intégrée au dépôt.
 
-% fusion, résolution de conflits
+\begin{figure}[h!]
+\begin{minipage}{7cm}
+\begin{lstlisting}
+<<<<<<< rédacteur 1
+Oceania et Eurasia ont toujours été
+en guerre avec Estasia.
+=======
+Oceania est covfefe
+>>>>>>> rédacteur 2
+\end{lstlisting}
+\end{minipage}
+\caption{Exemple de conflit signalé par un gestionnaire de
+  versions\label{fig:conflitTxt}}
+\end{figure}
 
 
 \subsection{Gestion de variantes différentes du même projet} % TODO 
