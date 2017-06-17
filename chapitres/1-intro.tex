@@ -47,22 +47,22 @@ déporté sur un serveur accessible via le réseau.
 \subsection{Gestion de l'historique}
 
 La gestion de versions est un moyen de conserver une trace de
-l'historique du projet, sous la forme d'un ensemble de
-\textbf{révisions}\index{revision@révision} (\textit{commits} en
-anglais). Une révision est un ensemble atomique et identifiable de
-modifications liées par une certaine unité sémantique, portant sur un
-ou plusieurs fichiers, réalisées par un même contributeur identifié,
-explicitement introduites dans le projet, accompagnées d'un message
-explicatif et d'autres méta-données, comme la date\footnote{Dans
-  certains systèmes, comme par exemple Overleaf\index{Overleaf}, qui
-  est une surcouche web de Git pour la rédaction collaborative
-  (\url{https://www.overleaf.com/}), les révisions peuvent être
-  générées automatiquement, de manière périodique ou à chaque
-  modification élémentaire. Dans ce cas, une révision peut n'avoir ni
-  unité sémantique ni message explicatif, ce qui limite forcément
-  l'utilité de l'historique résultant. D'autre part, l'unicité
-  sémantique des révisions est une propriété qui, si elle est
-  désirable, dépend en grande partie de la bonne volonté des
+l'historique du projet (ou plus précisément d'un dépôt), sous la forme
+d'un ensemble de \textbf{révisions}\index{revision@révision}
+(\textit{commits} en anglais). Une révision est un ensemble atomique
+et identifiable de modifications liées par une certaine unité
+sémantique, portant sur un ou plusieurs fichiers, réalisées par un
+même contributeur identifié, explicitement introduites dans le projet,
+accompagnées d'un message explicatif et d'autres méta-données, comme
+la date\footnote{Dans certains systèmes, comme par exemple
+  Overleaf\index{Overleaf}, qui est une surcouche web de Git pour la
+  rédaction collaborative (\url{https://www.overleaf.com/}), les
+  révisions peuvent être générées automatiquement, de manière
+  périodique ou à chaque modification élémentaire. Dans ce cas, une
+  révision peut n'avoir ni unité sémantique ni message explicatif, ce
+  qui limite forcément l'utilité de l'historique résultant. D'autre
+  part, l'unicité sémantique des révisions est une propriété qui, si
+  elle est désirable, dépend en grande partie de la bonne volonté des
   contributeurs\ldots}. L'atomicité signifie que les modifications
 d'une même révision sont toutes appliquées ensemble au projet (ou
 qu'aucune ne l'est), sans qu'une modification provenant d'une autre
@@ -118,15 +118,73 @@ permettre de déterminer~:
 
 Les différentes personnes participant à un même projet doivent pouvoir
 voir leurs contributions individuelles intégrées au projet, idéalement
-de manière fluide, transparente et indolore.
+de manière fluide, transparente et indolore. Le problème qui se pose
+(et qui est partagé avec nombre d'autres domaines de l'informatique)
+est bien évidemment celui de la concurrence entre les
+modifications. Si deux développeurs, travaillant sur le même dépôt de
+référence, modifient le même fichier, chacun de son côté, comment les
+modifications de l'un peuvent-elles être prises en compte sans
+impacter négativement (ou oblitérer complètement) le travail de
+l'autre au moment d'enregistrer les révisions dans le dépôt~? Si les
+deux développeurs souhaitent effectuer des modifications différentes
+et jugées incompatibles par le système de gestion de versions, ce
+dernier informera de l'existence d'un \textbf{conflit}\index{conflit},
+qui devra être résolu avant de pouvoir continuer le développement.
 
+La figure~\ref{fig:conflit} illustre l'apparition d'un conflit dans la
+rédaction d'un document. À un certain point, le dépôt contient un
+texte affirmant que les continents d'Oceania et d'Estasia sont alliés
+depuis toujours dans une guerre contre Eurasia. La connaissance du
+contenu de ce document est partagé de toutes les personnes ayant accès
+au dépôt. Une évolution de la situation nécessite que le document soit
+édité et deux rédacteurs s'attellent simultanément à la tâche, chacun
+ignorant l'entreprise de l'autre. Le premier corrige le document pour
+lui faire dire qu'Oceania et Eurasia sont alliés depuis toujours dans
+une guerre contre Estasia, pendant que le deuxième introduit une
+modification différente, reflétant sa propre vision du monde et sa
+propre expertise de la géopolitique. Ces deux révisions traduisent des
+réalités complètement différentes et, dans ce cas précis, leurs
+différences ne peuvent être résolues automatiquement par un système de
+gestion de versions. Un conflit survient lorsque les deux rédacteurs
+tentent de faire accepter leurs révisions dans le dépôt\footnote{Le
+  moment exact d'apparition du conflit et les possibiltés de
+  résolution correspondantes dépendent du modèle utilisé par le
+  système de gestion de versions.}. Un utilisateur humain
+(typiquement, l'un des deux contributeurs) doit alors intervenir pour
+\textbf{résoudre}\index{conflit!resolution@résolution} le conflit et
+déterminer la version du document devant apparaître dans le dépôt.
+
+\begin{figure}[h!]
+  \includegraphics[width=15cm]{figures/conflit}
+  \caption{Apparition d'un conflit entre les contributions de deux
+    contributeurs.\label{fig:conflit}}
+\end{figure}
+
+Une première solution au problème des conflits dans les systèmes de
+gestion de versions est le \textbf{verrouillage}\index{verrou} des
+fichiers, qui empêche complètement l'apparition des
+conflits\footnote{La notion de verrou en informatique est utilisée
+  dans de nombreux autres domaines dans lesquels se posent des
+  problèmes de concurrence.}. Si l'on applique cette stratégie à notre
+scénario, le premier rédacteur déclarera prendre la main sur le
+fichier lorsqu'il commencera à travailler dessus. Le système gérant le
+dépôt y posera alors un verrou. Le deuxième rédacteur pourra toujours
+ouvrir le fichier en lecture, mais aucune modification ne lui sera
+possible tant que le premier rédacteur n'aura pas enregistré sa
+révision dans le dépôt, relâchant ainsi le verrou. Cette stratégie de
+verrouillage est efficace pour éviter les problèmes de concurrence,
+mais elle est très contraignante pour le développement en équipe car
+elle interdit le travail simultané sur une même portion du
+projet. C'est pour cela qu'elle n'est jamais utilisée comme moyen
+principal de gestion des conflits dans les systèmes modernes de
+gestion de versions.
+
+% TODO 
 Intégration des contributions de différentes personnes dans un
   même projet, en permettant la résolution des incohérences pouvant
   survenir entre des modifications concurrentes~;
 
-% Développement de fonctionnalités en parallèle, fusion, résolution de conflits
-% Notion de conflit
-\index{conflit}
+% fusion, résolution de conflits
 
 
 \subsection{Gestion de variantes différentes du même projet} % TODO 
