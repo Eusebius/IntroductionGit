@@ -177,9 +177,28 @@ révision dans le dépôt, relâchant ainsi le verrou. Cette stratégie de
 verrouillage est efficace pour éviter les problèmes de concurrence,
 mais elle est très contraignante pour le développement en équipe car
 elle interdit le travail simultané sur une même portion du
-projet. C'est pour cela qu'elle n'est jamais utilisée comme moyen
+projet. C'est pour cela qu'elle est rarement utilisée comme moyen
 principal de gestion des conflits dans les systèmes modernes de
-gestion de versions.
+gestion de versions\footnote{La gestion de concurrence par
+  verrouillage  pose en fait plusieurs types de problèmes
+  \cite[chap.~1]{SVNbook}~:
+  \begin{itemize}
+  \item Il est possible pour un contributeur de prendre un verrou et
+    de ne jamais le relâcher (parce qu'il ne valide jamais sa
+    révision), nécessitant ainsi l'intervention d'un administrateur
+    pour permettre aux autres développeurs de contribuer~;
+  \item Des verrous inutiles peuvent être imposés, notamment lorsque
+    deux contributeurs souhaitent éditer des parties différentes et
+    indépendantes d'un même projet~;
+  \item Le verrouillage en séquence de plusieurs fichiers par
+    plusieurs contributeurs peut conduire à des interblocages~;
+  \item Le verrouillage peut induire un sentiment indu de sécurité,
+    alors qu'il n'empêche pas les incohérences réparties sur plusieurs
+    fichiers, qui peuvent survenir si la granularité des révisions
+    (dépendant généralement des usages des contributeurs) n'est pas
+    adaptée.
+  \end{itemize}
+}.
 
 La solution généralement retenue pour intégrer les modifications
 provenant de contributeurs différents est la
