@@ -180,7 +180,7 @@ elle interdit le travail simultané sur une même portion du
 projet. C'est pour cela qu'elle est rarement utilisée comme moyen
 principal de gestion des conflits dans les systèmes modernes de
 gestion de versions\footnote{La gestion de concurrence par
-  verrouillage  pose en fait plusieurs types de problèmes
+  verrouillage pose en fait plusieurs types de problèmes
   \cite[chap.~1]{SVNbook}~:
   \begin{itemize}
   \item Il est possible pour un contributeur de prendre un verrou et
@@ -249,7 +249,10 @@ dérouleront sans problème et prévoit donc de traiter les conflits
 uniquement lorsqu'ils surviennent. La gestion par verrouillage est en
 revanche une stratégie dite \og pessimiste\fg, qui fait l'hypothèse
 que les conflits surviennent souvent et prend donc des précautions
-assez contraignantes pour les éviter.
+assez contraignantes pour les éviter. Cette dernière stratégie peut
+notamment se justifier dans le traitement des fichiers non textuels
+(fichers binaires, comme des exécutables ou des fichiers multimédia)
+qui ne peuvent pas être fusionnés automatiquement de manière simple.
 
 \subsection{Gestion de variantes différentes du même projet} % TODO 
 
