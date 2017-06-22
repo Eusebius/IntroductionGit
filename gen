@@ -1,8 +1,0 @@
-#!/bin/bash
-
-make clean
-make introgit.pdf
-makeglossaries introgit
-#makeindex -s introgitindex.ist introgit.idx
-pdflatex introgit
-make cleanlog

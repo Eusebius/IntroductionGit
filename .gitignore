@@ -1,6 +1,8 @@
 gitHeadInfo.gin
 introgit.pdf
 introgit.ist
+figures/*.eps
+figures/*.pdf
 *.acn
 *.acr
 *.alg

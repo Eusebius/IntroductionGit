@@ -12,9 +12,9 @@ La publication originale de ce document est le projet GitHub [Eusebius/Introduct
 
 ## Comment compiler ?
 
-Sous Linux, le script `gen` devrait compiler correctement le document au format PDF.
+Sous Linux, un `make` devrait compiler correctement le document au format PDF.
 
-Le document LaTeX utilise notamment `pdflatex`, `BibTeX` et `gitinfo`.
+Le document LaTeX utilise notamment `pdflatex`, `BibTeX`, `dia`, `epstopdf` et `gitinfo`.
 
 ## Comment contribuer ?
 
