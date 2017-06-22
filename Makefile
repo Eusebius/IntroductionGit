@@ -26,6 +26,7 @@ introgit.pdf : figures *.tex $(CHAPITRE_DIR)/*.tex
 	$(BIBTEX) introgit
 	$(MAKEGLOSSARIES) introgit
 	$(PDFLATEX) introgit
+	$(PDFLATEX) introgit
 
 figures: $(TARGETPDF)
 

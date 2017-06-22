@@ -255,12 +255,48 @@ notamment se justifier dans le traitement des fichiers non textuels
 (fichers binaires, comme des exécutables ou des fichiers multimédia)
 qui ne peuvent pas être fusionnés automatiquement de manière simple.
 
-\subsection{Gestion de variantes différentes du même projet} % TODO 
+\subsection{Gestion de variantes différentes du même projet} % TODO
 
-Possibilité de créer et de maintenir simultanément des variantes du
+Un système de gestion de versions doit enfin pouvoir permettre de
+créer et de maintenir simultanément des variantes distinctes du
 projet, par exemple pour expérimenter l'utilisation de nouvelles
 technologies, le développement de nouvelles fonctionnalités ou la mise
-en place d'une nouvelle organisation~;
+en place d'une nouvelle organisation. Cela est habituellement pris en
+charge par le concept de \textbf{branches}\index{branche}, qui
+correspond à l'idée d'un historique arborescent du développement,
+plusieurs voies pouvant être suivies simultanément. La
+figure~\ref{fig:historiqueArborescent} illustre un tel historique.
+
+\begin{figure}[h!]
+  \includegraphics[width=12cm]{figures/historiqueArborescent}
+  \caption{Exemple d'historique de projet avec plusieurs
+    branches.\label{fig:historiqueArborescent}}
+\end{figure}
+
+Cet exemple comprend trois branches identifiées~:
+\begin{itemize}
+\item Une branche principale (qui est appelée \texttt{trunk} dans
+  Subversion et \texttt{master}\index{branches!master@\texttt{master}}
+  dans Git), correspondant aux développement du projet au quotidien~;
+\item Une branche de version, servant à isoler et à faire évoluer
+  (notamment en lui appliquant des correctifs de sécurité) une version
+  publiable du projet~;
+\item Une branche correspondant au développement d'une nouvelle
+  fonctionnalité. Celui-ci se fait également de manière isolée par
+  rapport à la branche principale, afin de protéger cette dernière
+  d'évolutions exploratoires et expérimentales (et peut-être testées
+  de manière moins sévère pendant cette période de développement).
+\end{itemize}
+Il est à noter que dans le cas général, l'historique peut constituer
+un graphe (orienté et acyclique) plutôt qu'un arbre, notamment parce
+qu'il est souvent nécessaire d'intégrer les nouvelles fonctionnalités
+(une fois testées et validées) dans la branche principale de
+développement.
+
+Il y a de nombreuses manières de gérer les branches d'un même projet,
+notamment avec Git qui laisse le développeur très libre sur ce
+point. La section~\ref{secOrgBranches} présente quelques politiques
+usuelles d'organisation des différentes branches.
 
 \section{Systèmes de gestion de version} %TODO
 \index{systeme de gestion de versions@système de gestion de versions}
