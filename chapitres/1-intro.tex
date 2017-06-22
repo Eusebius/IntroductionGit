@@ -255,7 +255,7 @@ notamment se justifier dans le traitement des fichiers non textuels
 (fichers binaires, comme des exécutables ou des fichiers multimédia)
 qui ne peuvent pas être fusionnés automatiquement de manière simple.
 
-\subsection{Gestion de variantes différentes du même projet} % TODO
+\subsection{Gestion de variantes différentes du même projet}
 
 Un système de gestion de versions doit enfin pouvoir permettre de
 créer et de maintenir simultanément des variantes distinctes du
@@ -298,10 +298,51 @@ notamment avec Git qui laisse le développeur très libre sur ce
 point. La section~\ref{secOrgBranches} présente quelques politiques
 usuelles d'organisation des différentes branches.
 
-\section{Systèmes de gestion de version} %TODO
+\section{Systèmes de gestion de version}
 \index{systeme de gestion de versions@système de gestion de versions}
 
-% fichiers texte et fichiers binaires
+Ce cahier des charges du génie logiciel pour la gestion de versions
+n'a pas été établi en un jour. Il est le fruit d'une longue évolution
+de systèmes d'assistance au développement, répondant de plus en plus
+efficacement à des besoins et des spécifications de plus en plus
+riches et de plus en plus complexes. Si par la suite nous nous
+focaliserons sur Git, il ne nous semble pas inutile de faire un rapide
+état des lieux des systèmes existants (ou ayant existé).
+
+Il est globalement possible de classer ces systèmes en deux
+catégories~: les systèmes \textbf{centralisés}, dans lesquels une
+équipe de développement prend pour référence un dépôt unique faisant
+autorité, et les systèmes \textbf{décentralisés}, permettant la
+coexistence de plusieurs dépôts pour un même projet. Cette dernière
+famille, arrivée plus tard dans l'historique des gestionnaires de
+version, part d'un principe qui peut sembler contre-intuitif mais qui
+permet pourtant une grande souplesse d'organisation et l'établissement
+de procédures de collaboration très efficaces\footnote{Le modèle
+  décentralisé fournit également tous les outils nécessaires à de
+  véritables catastrophes logicielles et à des psychodrames très
+  intéressants, s'ils sont utilisés n'importe comment.}.
+
+S'il faut noter un point commun de la plupart des gestionnaires de
+version, c'est qu'ils sont plus à l'aise dans le suivi des fichiers
+textuels (typiquement les fichiers sources des langages compilables,
+les scripts, les fichiers de configuration\ldots) que des fichiers
+binaires (comme les documents multimédia, les exécutables, les
+archives compactées\ldots). Les raisons en sont multiples. Notamment,
+dans un fichier textuel il est plus facile d'identifier la portion en
+conflit et de prendre automatiquement une décision de fusion qui ait
+des chances d'avoir un sens. Nombre de formats binaires ne sont pas
+robustes à des modifications locales~: si un gestionnaire de versions
+essayait de résoudre des conflits de modifications entre deux
+altérations différentes d'une même image JPEG, il y a peu de chances
+que le résultat soit un document JPEG correctement formé (sans même
+aller jusqu'à espérer que l'image correspondante ait quelque chose à
+voir avec le résultat attendu). Les systèmes de gestion de versions
+capables de traiter efficacement des formats binaires (ou des formats
+textuels à la sémantique complexe) le font généralement par le biais
+de greffons ou de modules d'extension spécifiques, embarquant les
+informations et les analyseurs nécessaires pour interpréter et
+modifier des fichiers d'un format particulier. C'est là un marché
+davantage occupé par des produits propriétaires et payants.
 
 \subsection{Systèmes centralisés} %TODO
 \index{systeme de gestion de versions@système de gestion de versions!centralises@centralisé}
