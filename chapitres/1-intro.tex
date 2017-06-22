@@ -307,7 +307,10 @@ de systèmes d'assistance au développement, répondant de plus en plus
 efficacement à des besoins et des spécifications de plus en plus
 riches et de plus en plus complexes. Si par la suite nous nous
 focaliserons sur Git, il ne nous semble pas inutile de faire un rapide
-état des lieux des systèmes existants (ou ayant existé).
+état des lieux des systèmes existants (ou ayant existé). Bien entendu,
+la liste proposée n'est pas exhaustive, mais elle donne un aperçu de
+quelques gestionnaires de version ayant eu un certain succès à un
+moment donné de l'histoire de l'informatique.
 
 Il est globalement possible de classer ces systèmes en deux
 catégories~: les systèmes \textbf{centralisés}, dans lesquels une
@@ -346,29 +349,52 @@ davantage occupé par des produits propriétaires et payants.
 
 \subsection{Systèmes centralisés} %TODO
 \index{systeme de gestion de versions@système de gestion de versions!centralises@centralisé}
-% TODO CVS
-\index{CVS}
-% TODO Subversion
-\index{Subversion}
-% TODO Visual SourceSafe
-\index{Visual SourceSafe}
-% TODO Perforce Helix
-\index{Perforce Helix}
-% TODO VSTS (Visual Studio Team Services)
-\index{Visual Studio Team Services}
 
-\cite{Baire1}
-% 1st generation (single-fie, local-only, lock-before-edit)
-% * 1972: SCCS
-% * 1982: RCS
-% * 1985: PVCS
+Les systèmes de gestion de versions centralisés font leur apparition
+assez tôt dans l'histoire du développement logiciel. On peut choisir
+de les catégoriser en trois générations successives \cite{Baire1}.
+
+\subsubsection{Systèmes de première génération}
+
+Les premiers gestionnaires de versions à être conçus présentent des
+fonctionnalités bien sûr assez basiques comparés aux systèmes
+actuels. Ils mettent en \oe uvre des techniques robustes et bien
+connues, mais limitantes. Ils sont uniquement capable de raisonner
+fichier par fichier (sans vision globale du projet, et donc sans
+atomicité des révisions), d'une façon purement locale et en utilisant
+des mécanismes de verrouillage pour l'évitement des conflits
+d'édition.
+
+\begin{itemize}
+\item \textbf{1972~: Source Code Control System (SCSS).}\index{SCSS}
+  SCSS a été développé à l'origine par Bell Labs pour des ordinateurs
+  \textit{mainframe} IBM tournant sur OS/360, mais fut réécrit en 1977
+  pour tourner sur des PDP-11 sous UNIX, système d'exploitation pour
+  lequel il fut longtemps le gestionnaire de versions de référence. Il
+  fonctionnait en introduisant des des fichiers source en C un
+  identifiant textuel unique (contenant un nom de fichier, une date et
+  un commentaire) qui se retrouvait ensuite dans les exécutables
+  compilés, permettant d'en tracer la version des sources utilisée~;
+\item \textbf{1982~: Revision Control System (RCS).}\index{RCS}
+  Initialement publié comme un logiciel propriétaire, RCS est depuis
+  1990 distribué sous licence GPL, et encore maintenu par le projet
+  GNU. RCS utilise le concept de branches (fichier par fichier), mais
+  d'une manière jugée trop complexe par les développeurs. Il introduit
+  également la notion de groupes de révision (\textit{revision
+    groups}), qui permet d'introduire une certaine forme d'atomicité
+  transactionnelle.
+\end{itemize}
+
+\subsubsection{Systèmes de deuxième génération}
 % 2nd generation (multiple-les, client-server, merge-before-commit)
-% * 1986: CVS
+% * 1986: CVS\index{CVS}
 % * 1992: Rational ClearCase
-% * 1994: Visual SourceSafe
+% * 1994: Visual SourceSafe\index{Visual SourceSafe}
+\subsubsection{Systèmes de troisième génération}
 % 3rd generation (+ repository-level atomicity)
-% * 1995: Perforce
-% * 2000: Subversion
+% * 1995: Perforce\index{Perforce Helix}
+% * 2000: Subversion\index{Subversion}
+% \index{Visual Studio Team Services}
 
 \subsection{Systèmes décentralisés} %TODO
 \index{systeme de gestion de versions@système de gestion de versions!decentralises@décentralisé}
