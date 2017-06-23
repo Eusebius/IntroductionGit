@@ -8,7 +8,7 @@ philosophie et le modèle de fonctionnement.
 
 \section{Les besoins du génie logiciel}
 
-La \textbf{gestion de versions}\index{Gestion de versions} (en anglais
+La \textbf{gestion de versions}\index{gestion de versions} (en anglais
 \textit{version control} ou \textit{revision control}) est une
 fonctionnalité, ou plutôt une famille de fonctionnalités, qui trouve
 son origine dans les besoins du développement logiciel en
@@ -68,16 +68,16 @@ d'une même révision sont toutes appliquées ensemble au projet (ou
 qu'aucune ne l'est), sans qu'une modification provenant d'une autre
 révision puisse venir interférer ni que le projet puisse se retrouver
 dans un état incohérent (avec une révision partiellement
-appliquée)\footnote{Il existe des systèmes de gestion de versions dans
-  lesquels les révisions ne sont pas atomiques. Nous ne les
-  mentionneront pas ici, dans l'espoir que leur nom disparaisse à
-  jamais de la mémoire collective et de l'histoire de l'informatique
-  (pour plus de détails sur les bonnes pratiques du révisionnisme avec
-  Git, les nostalgiques du Ministère de la Vérité \cite{Orwell}
-  pourront étudier avec intérêt la section~\ref{secRevisionnisme}).}.
-Par abus de langage, le terme de révision ou de \textit{commit}
-désigne également l'état du projet après application des modifications
-en question.
+appliquée)\footnote{Dans les systèmes de gestion de versions les plus
+  anciens (ou les moins bien conçus), les révisions ne sont pas
+  atomiques. Nous ne les mentionneront pas ici dans l'espoir que leur
+  nom disparaisse à jamais de la mémoire collective et de l'histoire
+  de l'informatique (pour plus de détails sur les bonnes pratiques du
+  révisionnisme avec Git, les nostalgiques du Ministère de la Vérité
+  \cite{Orwell} pourront étudier avec intérêt la
+  section~\ref{secRevisionnisme}).}.  Par abus de langage, le terme de
+révision ou de \textit{commit} désigne également l'état du projet
+après application des modifications en question.
 
 Dans le cas le plus simple, un historique est une succession linéaire
 de révisions, chacune s'appuyant sur la précédente
@@ -163,8 +163,8 @@ déterminer la version du document devant apparaître dans le dépôt.
 \end{figure}
 
 Une première solution au problème des conflits dans les systèmes de
-gestion de versions est le \textbf{verrouillage}\index{verrou} des
-fichiers (stratégie dite \textit{lock-modify-unlock}), qui empêche
+gestion de versions est le \textbf{verrouillage}\index{verrouillage}
+des fichiers (stratégie dite \textit{lock-modify-unlock}), qui empêche
 complètement l'apparition des conflits\footnote{La notion de verrou en
   informatique est utilisée dans de nombreux autres domaines dans
   lesquels se posent des problèmes de concurrence.}. Si l'on applique
@@ -367,16 +367,19 @@ des mécanismes de verrouillage pour l'évitement des conflits
 d'édition.
 
 \begin{itemize}
-\item \textbf{1972~: Source Code Control System (SCSS).}\index{SCSS}
+\item \textbf{1972~: Source Code Control System
+    (SCSS)\footnote{\url{http://pubs.opengroup.org/onlinepubs/9699919799/utilities/sccs.html}.}.}\index{SCSS}
   SCSS a été développé à l'origine par Bell Labs pour des ordinateurs
-  \textit{mainframe} IBM tournant sur OS/360, mais fut réécrit en 1977
-  pour tourner sur des PDP-11 sous UNIX, système d'exploitation pour
-  lequel il fut longtemps le gestionnaire de versions de référence. Il
-  fonctionnait en introduisant des des fichiers source en C un
-  identifiant textuel unique (contenant un nom de fichier, une date et
-  un commentaire) qui se retrouvait ensuite dans les exécutables
-  compilés, permettant d'en tracer la version des sources utilisée~;
-\item \textbf{1982~: Revision Control System (RCS).}\index{RCS}
+  \textit{mainframe} IBM tournant sur OS/360\index{OS/360}, mais fut
+  réécrit en 1977 pour tourner sur des PDP-11 sous UNIX\index{UNIX},
+  système d'exploitation pour lequel il fut longtemps le gestionnaire
+  de versions de référence. Il fonctionnait en introduisant des des
+  fichiers source en C un identifiant textuel unique (contenant un nom
+  de fichier, une date et un commentaire) qui se retrouvait ensuite
+  dans les exécutables compilés, permettant d'en tracer la version des
+  sources utilisée~;
+\item \textbf{1982~: Revision Control System
+    (RCS)\footnote{\url{https://www.gnu.org/software/rcs/}.}.}\index{RCS}
   Initialement publié comme un logiciel propriétaire, RCS est depuis
   1990 distribué sous licence GPL, et encore maintenu par le projet
   GNU. RCS utilise le concept de branches (fichier par fichier), mais
@@ -390,54 +393,100 @@ d'édition.
 
 Les systèmes de gestion de versions de deuxième génération commencent
 à pouvoir considérer un projet dans son ensemble, et non plus fichier
-par fichier. Ils sont organisés autour d'une architecture
-client-serveur et favorisent des stratégies de type \textit{merge
-  before commit} (c'est-à-dire que tous les conflits doivent avoir été
-résolus avant d'enregistrer une révision).
+par fichier, même si l'atomicité des révisions n'est pas encore
+acquise. Ils sont organisés autour d'une architecture client-serveur
+et favorisent des stratégies de type \textit{merge before commit}
+(c'est-à-dire que tous les conflits doivent avoir été résolus avant
+d'enregistrer une révision).
 
 \begin{itemize}
-\item \textbf{1986~: Concurrent Versions System (CVS).}\index{CVS}
+\item \textbf{1986~: Concurrent Versions System
+    (CVS)\footnote{\url{http://savannah.nongnu.org/projects/cvs}.}.}\index{CVS}
   CVS, logiciel libre sous licence GPL, est la référence incontestée
   des systèmes de deuxième génération et a longtemps été le
   gestionnaire de versions le plus utilisé. Il était initialement
   conçu comme une interface d'utilisation de RCS, l'enrichissant avec
-  des fonctionnalités de gestion de projet. Le serveur CVS est
-  normalement fait pour fonctionner sur UNIX, des clients existant
-  pour les systèmes d'exploitation les plus courants~;
-\item \textbf{1992~: Rational ClearCase.}\index{Rational ClearCase}
-  ClearCase a initialement été développé par Atria Software,
-  maintenant intégrée à IBM. C'est un logiciel propriétaire (toujours
-  maintenu) de gestion de configuration logicielle, qui comprend entre
-  autres un gestionnaire de versions et qui est adapté à la conception
-  conjointe du matériel et du logiciel. Il s'appuie sur un modèle
-  particulier avec ses propres concepts, qui inclut notamment des
-  notions de branches et de versions aux sémantiques prédéfinies. Il
-  est conçu autour d'un systèmes de fichiers spécialisé permettant de
-  créer des vues différentes d'un même projet, correspondant à des
-  versions différentes~;
-\item \textbf{1994: Microsoft Visual SourceSafe.}\index{Microsoft
-    Visual SourceSafe} Visual SourceSafe est un logiciel propriétaire
-  initialement développé par One Tree Software (depuis rachetée par
-  Microsoft) et abandonné depuis 2006. C'est un gestionnaire de code
-  source (ou d'autres documents textuels) incluant une gestion de
-  versions, plutôt adapté à des projets de petite taille. Il fait
-  figure d'original en ceci que ses fonctionnalités et ses choix de
-  conception relèvent davantage des systèmes de première
-  génération. En particulier, il avait jusqu'en 2005 la particularité
-  de fonctionner uniquement en local (éventuellement sur un système de
-  fichiers partagé) et non en mode client-serveur, à la différence des
-  autres systèmes de sa génération. Il est également à noter qu'il
-  fonctionnait par verrouillage et sans atomicité des révisions. Ces
-  choix techniques ont d'ailleurs longtemps été critiqués et
-  SourceSafe fait partie des rares outils de Microsoft à ne quasiment
-  pas avoir été utilisés en interne.
+  des fonctionnalités de gestion de projet mais héritant de la
+  non-atomicité de ses révisions. Le serveur CVS est normalement fait
+  pour fonctionner sur UNIX\index{UNIX}, des clients existant pour les
+  systèmes d'exploitation les plus courants~;
+\item \textbf{1992~: Rational
+    ClearCase\footnote{\url{http://www-03.ibm.com/software/products/en/clearcase}.}.}\index{Rational
+    ClearCase} ClearCase a initialement été développé par Atria
+  Software, maintenant intégrée à IBM. C'est un logiciel propriétaire
+  (toujours maintenu) de gestion de configuration logicielle, qui
+  comprend entre autres un gestionnaire de versions et qui est adapté
+  à la conception conjointe du matériel et du logiciel. Il s'appuie
+  sur un modèle particulier avec ses propres concepts, qui inclut
+  notamment des notions de branches et de versions aux sémantiques
+  prédéfinies. Il est conçu autour d'un systèmes de fichiers
+  spécialisé permettant de créer des vues différentes d'un même
+  projet, correspondant à des versions différentes~;
+\item \textbf{1994: Microsoft Visual SourceSafe
+    (VSS).}\index{Microsoft Visual SourceSafe} Visual SourceSafe est
+  un logiciel propriétaire initialement développé par One Tree
+  Software (depuis rachetée par Microsoft) et abandonné depuis
+  2006. C'est un gestionnaire de code source (ou d'autres documents
+  textuels) incluant une gestion de versions, plutôt adapté à des
+  projets de petite taille. Il fait figure d'original en ceci que ses
+  fonctionnalités et ses choix de conception relèvent davantage des
+  systèmes de première génération. En particulier, il avait jusqu'en
+  2005 la particularité de fonctionner uniquement en local
+  (éventuellement sur un système de fichiers partagé) et non en mode
+  client-serveur, à la différence des autres systèmes de sa
+  génération. Il est également à noter qu'il fonctionnait par
+  verrouillage et sans atomicité des révisions. Ces choix techniques
+  ont d'ailleurs longtemps été critiqués et SourceSafe fait partie des
+  rares outils de Microsoft à ne quasiment pas avoir été utilisés en
+  interne. SourceSafe est maintenant remplacé, dans la suite Visual,
+  par Visual Studio Application Lifecycle Management (ALM), qui peut
+  interfacer d'autres gestionnaires de versions et s'appuyer sur les
+  autres services fournis par Microsoft.
 \end{itemize}
 
-\subsubsection{Systèmes de troisième génération} % TODO
-% 3rd generation (+ repository-level atomicity)
-% * 1995: Perforce\index{Perforce Helix}
-% * 2000: Subversion\index{Subversion}
-% \index{Visual Studio Team Services}
+\subsubsection{Systèmes de troisième génération}
+
+Les systèmes de gestion de versions centralisés les plus modernes, et
+sans doute les derniers à être réellement utilisés actuellement,
+assurent une véritable vision de l'historique par dépôt et par projet,
+et non plus pour un simple ensemble de fichiers. L'atomicité des
+révisions y est devenue un paradigme universellement partagé et
+l'intégration avec différents systèmes d'exploitations et
+environnements de développement une exigence assumée.
+
+\begin{itemize}
+\item \textbf{1995: Perforce
+    Helix\footnote{\url{https://www.perforce.com/products/helix-core}.}.\index{Perforce
+      Helix}} Originellement nommé Perforce, Perforce Helix est un
+  gestionnaire de versions propriétaire développé et maintenu par la
+  société du même nom. C'est un système assez répandu dans le monde
+  industriel et présentant de nombreuses fonctionnalités pour
+  l'utilisabilité et l'interopérabilité. La gestion des conflits
+  s'appuie principalement sur la fusion mais les utilisateurs, qui
+  doivent déclarer à l'avance les fichiers sur lesquels ils vont
+  travailler, peuvent également choisir d'en verrouiller certains. On
+  peut noter l'utilisation (encore aujourd'hui) de MD5\index{MD5} pour
+  assurer l'intégrité des fichiers versionnés, ce qui fait hériter
+  Perforce des vulnérabilités de cet algorithme, reconnu non sûr et
+  déprécié depuis de nombreuses années~;
+\item \textbf{2000: Apache Subversion
+    (SVN)\footnote{\url{http://subversion.apache.org/}.}.\index{Subversion}}
+  Subversion est le grand successeur de CVS pour la gestion de
+  versions centralisée. Il a été initialement développé par CollabNet
+  entre 2000 et 2004 (date de la première version stable) et a été
+  accepté comme projet Apache en 2009, avant de devenir un projet
+  \textit{top-level} de la fondation. Sous licence libre depuis sa
+  conception, il est très largement utilisé par la communauté libre et
+  \textit{open source}, tout autant que pour le développement logiciel
+  propriétaire. Il est interopérable avec tous les grands systèmes
+  d'exploitation et s'intègre d'une manière ou d'une autre (souvent
+  via des greffons ou des modules complémentaires) dans une majorité
+  d'environnements de développement. Les critiques qu'on peut lui
+  faire (en particulier lorsqu'on le compare à Git) portent notamment
+  sur ses capacités limitées à fusionner automatiquement des révisions
+  concurrentes d'un même fichier, nécessitant des interventions
+  manuelles fréquentes.
+\end{itemize}
 
 \subsection{Systèmes décentralisés} %TODO
 \index{systeme de gestion de versions@système de gestion de versions!decentralises@décentralisé}
