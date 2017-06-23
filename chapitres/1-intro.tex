@@ -501,9 +501,15 @@ conception plus originaux \cite{Baire1}.
 
 Le point commun de ces systèmes est de n'imposer ni le travail sur un
 système de fichiers commun, ni une architecture client-serveur
-s'appuyant sur un serveur unique.
+s'appuyant sur un serveur unique. Les gestionnaires de versions
+décentralisés permettent généralement de travailler avec des dépôts
+multiples, dont certains peuvent par exemple être en lecture seule
+(pour la publication) alors que d'autres servent au développement ou à
+l'intégration. Dans ce type de systèmes, il est absolument essentiel
+de disposer d'un dispositif de fusion efficace (au sens de la gestion
+des conflits) et performant.
 
-\subsubsection{Systèmes de première génération} % TODO
+\subsubsection{Systèmes de première génération}
 
 \begin{itemize}
 \item \textbf{2000~:
@@ -518,14 +524,37 @@ s'appuyant sur un serveur unique.
   gratuitement, conduisant au développement de Git. Depuis, BitKeeper
   est passé sous licence libre (Apache) mais n'a pas pour autant
   repris sa place dans le processus de développement de Linux~;
-\item \textbf{2001~: GNU arch.}\index{GNU arch} % TODO évolue en Baz en 2004, donne naissance à Bazaar
-\item \textbf{2003~: Monotone.}\index{Monotone} % TODO
+\item \textbf{2001~: GNU
+    arch\footnote{\url{https://www.gnu.org/software/gnu-arch/}.}.}\index{GNU
+    arch} GNU arch est à l'origine un projet personnel de Thomas Lord,
+  intégré par la suite au projet GNU. GNU arch a par la suite donné
+  lieu à plusieurs dérivés (\textit{forks}), dont le plus connu est
+  sans doute Baz, identifié par Thomas Lord comme son successeur
+  officiel et qui a ensuite évolué en Bazaar. GNU arch a été critiqué
+  pour sa difficulté de prise en main, son nombre important de
+  commandes et son modèle relativement rigide~;
+\item \textbf{2003~:
+    Monotone\footnote{\url{http://www.monotone.ca/}.}.}\index{Monotone}
+  Monotone est un gestionnaire sous licence libre (GNU GPL) qui donne
+  la priorité à l'intégrité et à l'authenticité des révisions (par le
+  biais de condensats SHA-1\footnote{Monotone hérite donc, comme Git
+    ou Mercurial, des faiblesses de SHA-1, qui ne devrait maintenant
+    plus être utilisé pour assurer l'intégrité d'un contenu, des
+    collisions pouvant être construites en un temps raisonnable.} et
+  de signatures RSA) par rapport aux performances. Ce choix délibéré
+  se ressent particulièrement lorsqu'un nouveau contributeur doit
+  cloner un dépôt pour commencer à travailler sur un projet~: de
+  nombreuses vérifications cryptographiques ayant lieu à cette étape,
+  le clonage peut être suffisamment long pour être réellement
+  handicapant. Monotone est néanmoins réputé très robuste dans sa
+  gestion des fusions et a servi d'inspiration pour le développement
+  de Git.
 \end{itemize}
 
 \subsubsection{Systèmes de deuxième génération}
 
 \begin{itemize}
-\item \textbf{2005 : Bazaar.}\index{Bazaar} % TODO
+\item \textbf{2005 : GNU Bazaar.}\index{GNU Bazaar} % TODO
 \item \textbf{2005 : Mercurial.}\index{Mercurial} % TODO
 \item \textbf{2005 : Git.}\index{Git} % TODO
 \end{itemize}
