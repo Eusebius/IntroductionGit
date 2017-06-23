@@ -470,58 +470,62 @@ environnements de développement une exigence assumée.
   Perforce des vulnérabilités de cet algorithme, reconnu non sûr et
   déprécié depuis de nombreuses années~;
 \item \textbf{2000: Apache Subversion
-    (SVN)\footnote{\url{http://subversion.apache.org/}.}.\index{Subversion}}
-  Subversion est le grand successeur de CVS pour la gestion de
-  versions centralisée. Il a été initialement développé par CollabNet
-  entre 2000 et 2004 (date de la première version stable) et a été
-  accepté comme projet Apache en 2009, avant de devenir un projet
-  \textit{top-level} de la fondation. Sous licence libre depuis sa
-  conception, il est très largement utilisé par la communauté libre et
-  \textit{open source}, tout autant que pour le développement logiciel
-  propriétaire. Il est interopérable avec tous les grands systèmes
-  d'exploitation et s'intègre d'une manière ou d'une autre (souvent
-  via des greffons ou des modules complémentaires) dans une majorité
-  d'environnements de développement. Les critiques qu'on peut lui
-  faire (en particulier lorsqu'on le compare à Git) portent notamment
-  sur ses capacités limitées à fusionner automatiquement des révisions
-  concurrentes d'un même fichier, nécessitant des interventions
-  manuelles fréquentes.
+    (SVN)\footnote{\url{http://subversion.apache.org/}.}
+    \cite{SVNbook}.\index{Subversion}} Subversion est le grand
+  successeur de CVS pour la gestion de versions centralisée. Il a été
+  initialement développé par CollabNet entre 2000 et 2004 (date de la
+  première version stable) et a été accepté comme projet Apache en
+  2009, avant de devenir un projet \textit{top-level} de la
+  fondation. Sous licence libre depuis sa conception, il est très
+  largement utilisé par la communauté libre et \textit{open source},
+  tout autant que pour le développement logiciel propriétaire. Il est
+  interopérable avec tous les grands systèmes d'exploitation et
+  s'intègre d'une manière ou d'une autre (souvent via des greffons ou
+  des modules complémentaires) dans une majorité d'environnements de
+  développement. Les critiques qu'on peut lui faire (en particulier
+  lorsqu'on le compare à Git) portent notamment sur ses capacités
+  limitées à fusionner automatiquement des révisions concurrentes d'un
+  même fichier, nécessitant des interventions manuelles fréquentes.
 \end{itemize}
 
-\subsection{Systèmes décentralisés} %TODO
+\subsection{Systèmes décentralisés}
 \index{systeme de gestion de versions@système de gestion de versions!decentralises@décentralisé}
-% TODO Git
-\index{Git}
-% TODO GNU arch
-\index{GNU arch}
-% TODO Mercurial
-\index{Mercurial}
-% TODO BitKeeper
-\index{BitKeeper}
-% TODO Bazaar
-\index{Bazaar}
-% TODO Darcs
-\index{Darcs}
-% TODO Veracity
-\index{Veracity}
-% TODO VSTS (Visual Studio Team Services)
-\index{Visual Studio Team Services}
 
-\cite{Baire2} % transparent 18
-% 1ère génération
-% * 2000 : Bitkeeper
-% * 2001 : GNU arch, évolue en Baz en 2004, donne naissance à Bazaar
-% * 2003 : Monotone
-% 2ème génération
-% * 2005 : Bazaar
-% * 2005 : Mercurial
-% * 2005 : Git
-% Orienté patch
-% * 2003 : Darcs
-% Multi-fonction (wiki, bug tracker, ...)
-% * 2006 : Fossil
-% * 2010 : Veracity
+Les systèmes de gestion de versions décentralisés\footnote{Parfois
+  qualifiés, à tort, de \og distribués\fg.} apparaissent comme une
+évolution des systèmes centralisés modernes, ou comme une réaction à
+ces systèmes. De la même manière, deux vagues de réflexions et de
+conception ont abouti à deux générations de gestionnaires, même si
+certains semblent se tenir un peu à part du fait de choix de
+conception plus originaux \cite{Baire1}.
 
+Le point commun de ces systèmes est de n'imposer ni le travail sur un
+système de fichiers commun, ni une architecture client-serveur
+s'appuyant sur un serveur unique.
+
+\subsubsection{Systèmes de première génération} % TODO
+
+\begin{itemize}
+\item \textbf{2000~: BitKeeper.}\index{BitKeeper} % TODO
+\item \textbf{2001~: GNU arch.}\index{GNU arch} % TODO évolue en Baz en 2004, donne naissance à Bazaar
+\item \textbf{2003~: Monotone.}\index{Monotone} % TODO
+\end{itemize}
+
+\subsubsection{Systèmes de deuxième génération}
+
+\begin{itemize}
+\item \textbf{2005 : Bazaar.}\index{Bazaar} % TODO
+\item \textbf{2005 : Mercurial.}\index{Mercurial} % TODO
+\item \textbf{2005 : Git.}\index{Git} % TODO
+\end{itemize}
+
+\subsubsection{Autres systèmes décentralisés}
+
+\begin{itemize}
+\item \textbf{2003~: Darcs.}\index{Darcs} % TODO
+\item \textbf{2006~: Fossil.}\index{Fossil} % TODO multi-fonctions (wiki, bug tracker...)
+\item \textbf{2010~: Veracity.}\index{Veracity} % TODO multi-fonctions (wiki, bug tracker...)
+\end{itemize}
 
 \section{Le modèle de Git} %TODO
 % TODO philosophie, différents éléments du modèle
