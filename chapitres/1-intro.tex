@@ -386,23 +386,51 @@ d'édition.
   transactionnelle.
 \end{itemize}
 
-\subsubsection{Systèmes de deuxième génération} % TODO
+\subsubsection{Systèmes de deuxième génération}
 
 Les systèmes de gestion de versions de deuxième génération commencent
 à pouvoir considérer un projet dans son ensemble, et non plus fichier
 par fichier. Ils sont organisés autour d'une architecture
-client-serveur et favorisent une stratégie de type \textit{merge
+client-serveur et favorisent des stratégies de type \textit{merge
   before commit} (c'est-à-dire que tous les conflits doivent avoir été
 résolus avant d'enregistrer une révision).
 
 \begin{itemize}
-\item \textbf{1986~: Concurrent Versions System (CVS).}\index{CVS} CVS
-  est la référence incontestée des systèmes de deuxième génération et
-  a longtemps été le gestionnaire de versions le plus utilisé. Il
-  était initialement conçu comme une interface d'utilisation de RCS,
-  l'enrichissant avec des fonctionnalités de gestion de projet.
-\item \textbf{1992~: Rational ClearCase}\index{Rational ClearCase}
-\item \textbf{1994: Visual SourceSafe}\index{Visual SourceSafe}
+\item \textbf{1986~: Concurrent Versions System (CVS).}\index{CVS}
+  CVS, logiciel libre sous licence GPL, est la référence incontestée
+  des systèmes de deuxième génération et a longtemps été le
+  gestionnaire de versions le plus utilisé. Il était initialement
+  conçu comme une interface d'utilisation de RCS, l'enrichissant avec
+  des fonctionnalités de gestion de projet. Le serveur CVS est
+  normalement fait pour fonctionner sur UNIX, des clients existant
+  pour les systèmes d'exploitation les plus courants~;
+\item \textbf{1992~: Rational ClearCase.}\index{Rational ClearCase}
+  ClearCase a initialement été développé par Atria Software,
+  maintenant intégrée à IBM. C'est un logiciel propriétaire (toujours
+  maintenu) de gestion de configuration logicielle, qui comprend entre
+  autres un gestionnaire de versions et qui est adapté à la conception
+  conjointe du matériel et du logiciel. Il s'appuie sur un modèle
+  particulier avec ses propres concepts, qui inclut notamment des
+  notions de branches et de versions aux sémantiques prédéfinies. Il
+  est conçu autour d'un systèmes de fichiers spécialisé permettant de
+  créer des vues différentes d'un même projet, correspondant à des
+  versions différentes~;
+\item \textbf{1994: Microsoft Visual SourceSafe.}\index{Microsoft
+    Visual SourceSafe} Visual SourceSafe est un logiciel propriétaire
+  initialement développé par One Tree Software (depuis rachetée par
+  Microsoft) et abandonné depuis 2006. C'est un gestionnaire de code
+  source (ou d'autres documents textuels) incluant une gestion de
+  versions, plutôt adapté à des projets de petite taille. Il fait
+  figure d'original en ceci que ses fonctionnalités et ses choix de
+  conception relèvent davantage des systèmes de première
+  génération. En particulier, il avait jusqu'en 2005 la particularité
+  de fonctionner uniquement en local (éventuellement sur un système de
+  fichiers partagé) et non en mode client-serveur, à la différence des
+  autres systèmes de sa génération. Il est également à noter qu'il
+  fonctionnait par verrouillage et sans atomicité des révisions. Ces
+  choix techniques ont d'ailleurs longtemps été critiqués et
+  SourceSafe fait partie des rares outils de Microsoft à ne quasiment
+  pas avoir été utilisés en interne.
 \end{itemize}
 
 \subsubsection{Systèmes de troisième génération} % TODO
