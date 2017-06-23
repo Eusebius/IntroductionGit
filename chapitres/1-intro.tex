@@ -511,6 +511,14 @@ des conflits) et performant.
 
 \subsubsection{Systèmes de première génération}
 
+Les premiers gestionnaires de versions décentralisés avaient pour
+principal intérêt d'être justement les premiers. La décentralisation
+d'une fonctionnalité un tant soit peu complexe n'étant pas une tâche
+triviale, la plupart des systèmes expérimentant ce paradigme
+souffraient soit de performances dégradées, soit d'une complexité
+d'utilisation rédhibitoire. Ils ont néanmoins le mérite d'avoir été
+l'inspiration et le laboratoire des systèmes modernes.
+
 \begin{itemize}
 \item \textbf{2000~:
     BitKeeper\footnote{\url{http://www.bitkeeper.org/}.}.}\index{BitKeeper}
@@ -521,8 +529,12 @@ des conflits) et performant.
   gestion de versions du noyau Linux (et y avoir engendré des
   controverses animées à propos des restrictions de sa licence) entre
   2002 et 2005, date à laquelle BitKeeper a cessé d'être disponible
-  gratuitement, conduisant au développement de Git. Depuis, BitKeeper
-  est passé sous licence libre (Apache) mais n'a pas pour autant
+  gratuitement. Ce revirement, réaction à la rétro-ingénierie par un
+  utilisateur du protocole de communication de BitKeeper, a constitué
+  une crise et un point de rupture majeur dans l'histoire des systèmes
+  de gestion de versions, incitant au développement de concurrents
+  libres de très bonne qualité (Git et Mercurial). Depuis, BitKeeper
+  est passé sous licence libre (Apache) mais n'a pour autant jamais
   repris sa place dans le processus de développement de Linux~;
 \item \textbf{2001~: GNU
     arch\footnote{\url{https://www.gnu.org/software/gnu-arch/}.}.}\index{GNU
@@ -553,10 +565,72 @@ des conflits) et performant.
 
 \subsubsection{Systèmes de deuxième génération}
 
+En 2005, au moment du mini-scandale du changement de licence de
+BitKeeper, les utilisateurs des systèmes de gestion de versions
+avaient accumulé suffisamment d'expérience et de frustration
+collective pour exprimer de manière claire et précise les
+spécifications et exigences de leur système idéal (l'abandon des
+solutions centralisées étant pour beaucoup un prérequis). Il en a
+résulté le développement, dans une fourchette de temps relativement
+courte, de plusieurs gestionnaires de versions répondant à des
+cahiers des charges similaires et relativement comparables en termes
+de performance et d'utilisabilité.
+
 \begin{itemize}
-\item \textbf{2005 : GNU Bazaar.}\index{GNU Bazaar} % TODO
-\item \textbf{2005 : Mercurial.}\index{Mercurial} % TODO
-\item \textbf{2005 : Git.}\index{Git} % TODO
+\item \textbf{2005 : GNU
+    Bazaar\footnote{\url{http://bazaar.canonical.com/en/}.}.}\index{GNU
+    Bazaar} Héritier indirect de GNU arch, Bazaar a été développé par
+  la société Canonical, connue pour sa distribution Linux Ubuntu. Il
+  était initialement pensé comme un laboratoire pour les évolutions de
+  Baz mais a finalement évolué en projet autonome. Le développement a
+  débuté en 2005 et la première version a été publiée en décembre
+  2007. L'objectif principal de Bazaar était de reprendre les
+  fonctionnalités et les principes de GNU arch, mais en revisitant
+  complètement son interface de commandes, de manière à en améliorer
+  l'utilisabilité. Des projets significatifs de la communauté du
+  logiciel libre, comme GNU Emacs ou Bugzilla, s'appuyaient sur Bazaar
+  mais l'ont abandonné au profit de Git après 2012, lorsque Canonical
+  a réduit considérablement son effort de développement de Bazaar. Le
+  projet est toutefois toujours officiellement maintenu~;
+\item \textbf{2005 :
+    Git\footnote{\url{https://git-scm.com/}.}.}\index{Git} La première
+  version de Git a été développée en quelque mois par Linus Torvalds,
+  après la disparition de la licence gratuite de BitKeeper pour les
+  projets libres et \textit{open source}\footnote{Le nom de Git, qui
+    en argot anglais désigne une personne stupide, incompétente,
+    puérile ou méprisable, est à l'origine une référence de Linus
+    Torvalds à lui-même, en forme d'autodérision~: \textit{``I'm an
+      egotistical bastard, and I name all my projects after
+      myself. First `Linux', now `git'.''} Il semblerait y avoir un
+    consensus relativement large sur la prémisse de cette
+    affirmation. D'autres significations et interprétations ont par la
+    suite été proposées, dont la plus politiquement correcte est sans
+    doute \textit{``global information tracker''}.}. Ses
+  spécifications initiales sont donc ajustées aux besoins de
+  développement (exigeants) du noyau Linux. Ses commandes
+  raisonnablement intuitives (en tout cas, avec une certaine habitude
+  des systèmes de gestion de versions), son équilibre entre
+  performances et garanties d'intégrité, la souplesse d'utilisation
+  commune à tous les systèmes décentralisés et surtout son adoption
+  dans un projet aussi structurant en ont rapidement fait le
+  gestionnaire de version distribué le plus largement adopté (et donc
+  par corrolaire historique, le gestionnaire de versions le plus
+  largement adopté)~;
+\item \textbf{2005 :
+    Mercurial\footnote{\url{https://www.mercurial-scm.org/}}.}\index{Mercurial}
+  Ce gestionnaire de code source, principalement écrit en Python, a
+  comme Git été motivé par le psychodrame de la licence
+  BitKeeper\footnote{Le nom \og Mercurial\fg est d'ailleurs une
+    critique directe de Larry McVoy, CEO de la société éditant
+    BitKeeper. L'adjectif, qui lui avait été accolé dans un article,
+    caractérise en anglais une personne de caractère volatil et
+    changeant.}. Mercurial a été le concurrent malheureux de Git pour
+  la gestion de versions du noyau Linux. L'opposition des deux
+  logiciels, comparables en termes de fonctionnalités et de
+  performances, reste une pomme de discorde dans la communauté du
+  logiciel libre, qui s'ennuierait si elle venait à manquer de
+  controverses irréductibles. Mercurial est assez couramment utilisé,
+  notamment par Facebook, le W3C ou Mozilla.
 \end{itemize}
 
 \subsubsection{Autres systèmes décentralisés}
