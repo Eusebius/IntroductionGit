@@ -18,7 +18,9 @@ Le document LaTeX utilise notamment `pdflatex`, `BibTeX`, `dia`, `epstopdf` et `
 
 ## Comment contribuer ?
 
-Les contributeurs volontaires sont invités à proposer des *pull requests* sur le projet GitHub. Les commentaires, suggestions d'évolution, signalements de coquilles ou d'erreurs peuvent être directement soumis comme des *issues* du projet GitHub.
+Les contributeurs volontaires sont invités à proposer des *pull requests* sur le projet GitHub. Les *pull requests* ne seront toutefois acceptés que sur les parties du texte déjà rédigées par les contributeurs du dépôt.
+
+Les commentaires, suggestions d'évolution, signalements de coquilles ou d'erreurs peuvent être directement soumis comme des *issues* du projet GitHub.
 
 ## Mainteneur
 
