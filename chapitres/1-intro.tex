@@ -114,7 +114,7 @@ permettre de déterminer~:
 \item \ldots
 \end{itemize}
 
-\subsection{Intégration de contributions dans un même projet} % TODO 
+\subsection{Intégration de contributions dans un même projet}
 
 Les différentes personnes participant à un même projet doivent pouvoir
 voir leurs contributions individuelles intégrées au projet, idéalement
@@ -164,22 +164,22 @@ déterminer la version du document devant apparaître dans le dépôt.
 
 Une première solution au problème des conflits dans les systèmes de
 gestion de versions est le \textbf{verrouillage}\index{verrou} des
-fichiers, qui empêche complètement l'apparition des
-conflits\footnote{La notion de verrou en informatique est utilisée
-  dans de nombreux autres domaines dans lesquels se posent des
-  problèmes de concurrence.}. Si l'on applique cette stratégie à notre
-scénario, le premier rédacteur déclarera prendre la main sur le
-fichier lorsqu'il commencera à travailler dessus. Le système gérant le
-dépôt y posera alors un verrou. Le deuxième rédacteur pourra toujours
-ouvrir le fichier en lecture, mais aucune modification ne lui sera
-possible tant que le premier rédacteur n'aura pas enregistré sa
-révision dans le dépôt, relâchant ainsi le verrou. Cette stratégie de
-verrouillage est efficace pour éviter les problèmes de concurrence,
-mais elle est très contraignante pour le développement en équipe car
-elle interdit le travail simultané sur une même portion du
-projet. C'est pour cela qu'elle est rarement utilisée comme moyen
-principal de gestion des conflits dans les systèmes modernes de
-gestion de versions\footnote{La gestion de concurrence par
+fichiers (stratégie dite \textit{lock-modify-unlock}), qui empêche
+complètement l'apparition des conflits\footnote{La notion de verrou en
+  informatique est utilisée dans de nombreux autres domaines dans
+  lesquels se posent des problèmes de concurrence.}. Si l'on applique
+cette stratégie à notre scénario, le premier rédacteur déclarera
+prendre la main sur le fichier lorsqu'il commencera à travailler
+dessus. Le système gérant le dépôt y posera alors un verrou. Le
+deuxième rédacteur pourra toujours ouvrir le fichier en lecture, mais
+aucune modification ne lui sera possible tant que le premier rédacteur
+n'aura pas enregistré sa révision dans le dépôt, relâchant ainsi le
+verrou. Cette stratégie de verrouillage est efficace pour éviter les
+problèmes de concurrence, mais elle est très contraignante pour le
+développement en équipe car elle interdit le travail simultané sur une
+même portion du projet. C'est pour cela qu'elle est rarement utilisée
+comme moyen principal de gestion des conflits dans les systèmes
+modernes de gestion de versions\footnote{La gestion de concurrence par
   verrouillage pose en fait plusieurs types de problèmes
   \cite[chap.~1]{SVNbook}~:
   \begin{itemize}
@@ -202,7 +202,8 @@ gestion de versions\footnote{La gestion de concurrence par
 
 La solution généralement retenue pour intégrer les modifications
 provenant de contributeurs différents est la
-\textbf{fusion}\index{fusion}. Cette méthode consiste à toujours
+\textbf{fusion}\index{fusion} (stratégie dite
+\textit{copy-modify-merge}). Cette méthode consiste à toujours
 accepter les modifications du premier contributeur, puis à tenter
 d'accepter les modifications des suivants en essayant de les intégrer
 avec les modifications déjà enregistrées. Si ces modifications n'ont
@@ -306,11 +307,11 @@ n'a pas été établi en un jour. Il est le fruit d'une longue évolution
 de systèmes d'assistance au développement, répondant de plus en plus
 efficacement à des besoins et des spécifications de plus en plus
 riches et de plus en plus complexes. Si par la suite nous nous
-focaliserons sur Git, il ne nous semble pas inutile de faire un rapide
-état des lieux des systèmes existants (ou ayant existé). Bien entendu,
-la liste proposée n'est pas exhaustive, mais elle donne un aperçu de
-quelques gestionnaires de version ayant eu un certain succès à un
-moment donné de l'histoire de l'informatique.
+focaliserons sur Git, il ne nous semble pas inintéressant de faire un
+rapide état des lieux des systèmes existants (ou ayant existé). Bien
+entendu, la liste proposée n'est pas exhaustive, mais elle donne un
+aperçu de quelques gestionnaires de version ayant eu un certain succès
+à un moment donné de l'histoire de l'informatique.
 
 Il est globalement possible de classer ces systèmes en deux
 catégories~: les systèmes \textbf{centralisés}, dans lesquels une
@@ -385,12 +386,26 @@ d'édition.
   transactionnelle.
 \end{itemize}
 
-\subsubsection{Systèmes de deuxième génération}
-% 2nd generation (multiple-les, client-server, merge-before-commit)
-% * 1986: CVS\index{CVS}
-% * 1992: Rational ClearCase
-% * 1994: Visual SourceSafe\index{Visual SourceSafe}
-\subsubsection{Systèmes de troisième génération}
+\subsubsection{Systèmes de deuxième génération} % TODO
+
+Les systèmes de gestion de versions de deuxième génération commencent
+à pouvoir considérer un projet dans son ensemble, et non plus fichier
+par fichier. Ils sont organisés autour d'une architecture
+client-serveur et favorisent une stratégie de type \textit{merge
+  before commit} (c'est-à-dire que tous les conflits doivent avoir été
+résolus avant d'enregistrer une révision).
+
+\begin{itemize}
+\item \textbf{1986~: Concurrent Versions System (CVS).}\index{CVS} CVS
+  est la référence incontestée des systèmes de deuxième génération et
+  a longtemps été le gestionnaire de versions le plus utilisé. Il
+  était initialement conçu comme une interface d'utilisation de RCS,
+  l'enrichissant avec des fonctionnalités de gestion de projet.
+\item \textbf{1992~: Rational ClearCase}\index{Rational ClearCase}
+\item \textbf{1994: Visual SourceSafe}\index{Visual SourceSafe}
+\end{itemize}
+
+\subsubsection{Systèmes de troisième génération} % TODO
 % 3rd generation (+ repository-level atomicity)
 % * 1995: Perforce\index{Perforce Helix}
 % * 2000: Subversion\index{Subversion}
