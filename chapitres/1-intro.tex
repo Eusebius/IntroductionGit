@@ -635,10 +635,41 @@ de performance et d'utilisabilité.
 
 \subsubsection{Autres systèmes décentralisés}
 
+Et puis il y a ceux qu'on préfère laisser un peu à part\ldots
+
 \begin{itemize}
-\item \textbf{2003~: Darcs.}\index{Darcs} % TODO
-\item \textbf{2006~: Fossil.}\index{Fossil} % TODO multi-fonctions (wiki, bug tracker...)
-\item \textbf{2010~: Veracity.}\index{Veracity} % TODO multi-fonctions (wiki, bug tracker...)
+\item{\textbf{2003~: Darcs Advanced Revision Control System
+      (Darcs)}\footnote{\url{http://darcs.net/}.}}\index{Darcs} Darcs
+  est un gestionnaire de versions décentralisé écrit en Haskell (ce
+  qui en soi devrait être une information suffisante pour susciter
+  soit une irrépressible envie de le découvrir, soit une crainte
+  irraisonnée mais bien excusable). Il est fondé sur le principe des
+  \textit{patches} commutatifs et s'appuie, pour leur vérification,
+  sur la théorie des types. Il ne propose pas de branches multiples en
+  local, préférant gérer des dépôts aux historiques distincts. Son
+  mécanisme de fusion aboutit toujours à une histoire linéaire, dans
+  laquelle les révisions (les \textit{patches}) peuvent être
+  sélectionnés individuellement et appliqués d'un dépôt à l'autre, à
+  condition de vérifier certaines propriétés formelles. C'est un outil
+  séduisant si l'on a la tournure d'esprit d'un développeur
+  Haskell\ldots
+\item \textbf{2006~:
+    Fossil\footnote{\url{https://www.fossil-scm.org/}.}}\index{Fossil}
+  est un gestionnaire de versions décentralisé qui inclut également
+  une interface web, un \textit{bug tracker} et un wiki. Fossil
+  s'appuie sur une représentation des révisions dans SQLite pour en
+  obtenir l'atomicité par l'utilisation de transactions, choix de
+  conception qui impacte nécessairement les performances par rapport à
+  d'autres systèmes. Le développement du projet SQLite s'appuie sur
+  Fossil, ce qui pourrait justifier à la fois son existence et ses
+  choix
+  techniques\footnote{\url{https://en.wikipedia.org/wiki/Ouroboros}.}~;
+\item \textbf{2010~:
+    Veracity\footnote{\url{http://veracity-scm.com/}.}.}\index{Veracity}
+  est un autre outil intégré, proposant des outils de \textit{bug
+    tracking} et de développement agile (dont toutes les données sont
+  versionnées au même titre que le code source associé) en sus d'un
+  gestionnaire de version décentralisé.
 \end{itemize}
 
 \section{Le modèle de Git} %TODO
